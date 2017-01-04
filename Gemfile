@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
-
-gemspec
+gem 'github-pages', group: :jekyll_plugins
+gem 'redcarpet', "3.3.3"
