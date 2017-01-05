@@ -1,8 +1,9 @@
 #### Exclude
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
-#### Code Highlighter       ### pygments
-highlighter: rouge
+#### Code Highlighter       ### 
+highlighter: pygments  
+##rouge
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
