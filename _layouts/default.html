@@ -1,9 +1,5 @@
-{% include head.html %}
-<body>
-{% include header.html %}
-{{ content }}
-	</div>
-</div>
-{% include sidebar.html %}
-{% include footer.html %}
-{% include foot.html %}
+---
+---
+
+{% assign lang = site.data.languages[site.language] %}
+{% include layout.html %}
