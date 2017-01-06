@@ -122,9 +122,8 @@ Burp Proxy相当于BurpSuite的心脏，通过拦截，查看和修改所有的�
 `9.点击浏览` 
 `10.以当前用户或者本机计算机都可以` 
 `11.点击ok完成导入` 
-`12.重启ie（不需要以管理员权限运行） 其它浏览器差不多具体请查看官网`
-
-http://portswigger.net/burp/Help/proxy_options_installingCAcert.html
+`12.重启ie（不需要以管理员权限运行）` 
+其它浏览器差不多具体请查看官网http://portswigger.net/burp/Help/proxy_options_installingCAcert.html
 
 **Intercept**
 用于显示和修改HTTP请求和响应，通过你的浏览器和Web服务器之间。在BurpProxy的选项中，您可以配置拦截规则来确定请求是什么和响应被拦截(例如，范围内的项目，与特定文件扩展名，项目要求与参数，等)。 该面板还包含以下控制：
