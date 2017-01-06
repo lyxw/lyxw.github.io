@@ -218,12 +218,12 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 您可以与拒绝连接到服务器，如果接收到无效的SSL证书胖客户端应用程序的工作。 
 ```
 下列选项可用：
-**Use a self-signed certificate** —— 一个简单的自签名SSL证书提交给您的浏览器，它总是导致SSL警告。
-**Generate CA-signed per-host certificate** —— 这是默认选项。安装后，BurpSuite创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次BurpSuite运行。当你的浏览器发出SSL连接到指定的主机，Burp产生该主机，通过CA证书签名的SSL证书。您可以安装BurpSuite的CA证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或Burp的其他实例使用CA证书。
-**Generate a CA-signed certificate with a specific hostname** —— 这类似于前面的选项;然而，Burp会产生一个单一的主机证书与每一个SSL连接使用，使用您指定的主机名。在进行无形的代理时，此选项有时是必要的，因为客户端没有发送连接请求，因此Burp不能确定SSL协议所需的主机名。你也可以安装BurpSuite的CA证书作为受信任的根。
-**Use a custom certificate** —— 此选项使您可以加载一个特定的证书（在PKCS＃12格式）呈现给你的浏览器。如果应用程序使用它需要特定的服务器证书（例如一个给定序列号或证书链）的客户端应该使用这个选项。
+**Use a self-signed certificate** 一个简单的自签名SSL证书提交给您的浏览器，它总是导致SSL警告。
+**Generate CA-signed per-host certificate** 这是默认选项。安装后，BurpSuite创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次BurpSuite运行。当你的浏览器发出SSL连接到指定的主机，Burp产生该主机，通过CA证书签名的SSL证书。您可以安装BurpSuite的CA证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或Burp的其他实例使用CA证书。
+**Generate a CA-signed certificate with a specific hostname** 这类似于前面的选项;然而，Burp会产生一个单一的主机证书与每一个SSL连接使用，使用您指定的主机名。在进行无形的代理时，此选项有时是必要的，因为客户端没有发送连接请求，因此Burp不能确定SSL协议所需的主机名。你也可以安装BurpSuite的CA证书作为受信任的根。
+**Use a custom certificate** 此选项使您可以加载一个特定的证书（在PKCS＃12格式）呈现给你的浏览器。如果应用程序使用它需要特定的服务器证书（例如一个给定序列号或证书链）的客户端应该使用这个选项。
 
 - **Exporting and Importing the CA Certificate**
 您可以导出您安装特定的CA证书在其他工具或BurpSuite的其他情况下使用，并且可以导入证书Burp在当前实例使用。 您可以选择要导出的证书只（用于导入到您的浏览器或其他设备的信任），或者你可以同时导出的证书及其私钥。
 注意：您不应该透露的私钥证书给任何不可信的一方。拥有你的证书和密钥的恶意攻击者可能可以，即使你不使用Burp拦截浏览器的HTTPS流量。
-您也可以仅通过访问`http://burp/cert`在浏览器中导出证书。它使HTTPS请求您的浏览器相同的证书，但在一些移动设备上安装时，设备通过一个URL来下载它是有帮助的。
+您也可以仅通过访问http://burp/cert在浏览器中导出证书。它使HTTPS请求您的浏览器相同的证书，但在一些移动设备上安装时，设备通过一个URL来下载它是有帮助的。
