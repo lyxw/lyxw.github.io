@@ -1,9 +1,13 @@
 ---
-title: Emoji Test
-tags:
+title: Burp Suite使用介绍（一）
+tags: burpsuit
 ---
 
-This is an emoji test. :smile:
+##Getting Started##
+Burp Suite 是用于攻击web 应用程序的集成平台。它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。所有的工具都共享一个能处理并显示HTTP 消息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。本文主要介绍它的以下特点：
 
-:bowtie::smile::laughing::blush::smiley::relaxed::smirk:
-:heart_eyes::kissing_heart::kissing_closed_eyes::flushed::relieved::satisfied::grin:
+- **1.Target(目标)**
+显示目标目录结构的的一个功能
+
+- **2.Proxy(代理)**
+拦截HTTP/S的代理服务器，作为一个在浏览器和目标应用程序之间的中间人，允许你拦截，查看，修改在两个方向上的原始数据流。
