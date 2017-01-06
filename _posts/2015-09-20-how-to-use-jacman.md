@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: 如何使用 Jacman 主题
 tags:
