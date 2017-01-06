@@ -98,6 +98,7 @@ Burp支持手动的Web应用程序测试的活动。它可以让你有效地结�
 | Manual load 	                 | 手动加载 	    | Analyze now 	                         | 现在分析                 |
 | Platform authentication 	     | 平台认证 	    | Upstream proxy servers 	             | 上游代理服务器           |
 | Grep Extrack 	                 | 提取             |                                        |                          |	  	  
+
 ##Proxy功能##
 Burp Proxy相当于BurpSuite的心脏，通过拦截，查看和修改所有的请求和响应您的浏览器与目标Web服务器之间传递。 下面了解有关BurpProxy：
 ![](https://lyxw.github.io/assets/img/articles/burp2.png)
@@ -127,7 +128,7 @@ Burp Proxy相当于BurpSuite的心脏，通过拦截，查看和修改所有的�
 `12.重启ie（不需要以管理员权限运行）` 
 其它浏览器差不多具体请查看官网http://portswigger.net/burp/Help/proxy_options_installingCAcert.html
 
-**Intercept**
+###Intercept
 用于显示和修改HTTP请求和响应，通过你的浏览器和Web服务器之间。在BurpProxy的选项中，您可以配置拦截规则来确定请求是什么和响应被拦截(例如，范围内的项目，与特定文件扩展名，项目要求与参数，等)。 该面板还包含以下控制：
 - **Forward**
 当你编辑信息之后，发送信息到服务器或浏览器
@@ -267,7 +268,7 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 **Miscellaneous**
 控制Burp代理的行为的一些具体细节。下列选项可用：
 - **Use HTTP/1.0 in requests to server** - 该选项控制BurpSuite代理是否强制在请求目标服务器的HTTP 1.0版。默认设置是使用任何的HTTP版本所使用的浏览器。然而，一些遗留服务器或应用程序可能需要1.0版本才能正常工作。
-**Use HTTP/1.0 in responses to client** - 目前所有的浏览器都支持这两个版本1.0和HTTP 1.1 。从1.0版本开始已经减少了一些功能，迫使使用1.0版本有时会很有用，以控制浏览器的行为的各个方面，例如防止企图执行HTTP流水线。
+- **Use HTTP/1.0 in responses to client** - 目前所有的浏览器都支持这两个版本1.0和HTTP 1.1 。从1.0版本开始已经减少了一些功能，迫使使用1.0版本有时会很有用，以控制浏览器的行为的各个方面，例如防止企图执行HTTP流水线。
 - **Set response header “Connection:close”** - 这个选项也可能是有用的，以防止HTTP流水线在某些情况下。
 Unpack gzip / deflate in requests - 某些应用程序（通常是那些使用自定义客户端组件） ，压缩在请求消息体。该选项控制BurpProxy是否自动解压缩压缩请求主体。请注意，某些应用程序可能被破坏，如果他们期望的压缩体和压缩已通过Burp被删除。
 - **Unpack gzip / deflate in responses** - 大多数浏览器接受的gzip和响应紧缩压缩的内容。该选项控制BurpSuite代理是否自动解压缩压缩响应机构。请注意，您可以经常防止服务器试图通过删除请求（可能使用BurpProxy的匹配和替换功能）的Accept-Encoding头压缩的响应。 Disable web interface at http://burp - 如果你不得不配置你的听众接受无保护的接口上的连接，并希望阻止他人接触到Burp浏览器控件，此选项可能有用。
@@ -277,22 +278,21 @@ Unpack gzip / deflate in requests - 某些应用程序（通常是那些使用�
 
 ##Target功能##
 目标工具包含了SiteMap，用你的目标应用程序的详细信息。它可以让你定义哪些对象在范围上为你目前的工作，也可以让你手动测试漏洞的过程。
-**Using Burp Target**
+###Using Burp Target
 在地址栏输入www.baidu.com，如图
 ![](https://lyxw.github.io/assets/img/articles/burp11.png)
 这样看起来site map是不是很乱，则可以右击add to scope，然后点击Filter勾选Show only in-scope items，此时你再回头看Site map就只有百度一个地址了，这里filter可以过滤一些参数，show all显示全部，hide隐藏所有，如果勾选了表示不过滤
 ![](https://lyxw.github.io/assets/img/articles/burp12.png)
 针对地址右击显示当前可以做的一些动作操作等功能。左图 针对文件右击显示当前可以做一些动作操作等功能。如图：
 ![](https://lyxw.github.io/assets/img/articles/burp13.png)
-![](https://lyxw.github.io/assets/img/articles/burp14.png)
 **Scope**
 这个主要是配合Site map做一些过滤的功能，如图：
-![](https://lyxw.github.io/assets/img/articles/burp15.png)
+![](https://lyxw.github.io/assets/img/articles/burp14.png)
 Include in scope就是扫描地址或者拦截历史记录里右击有个add to scope就是添加到这了，也可以自己手动添加。
 Target分为site map和scope两个选项卡
 **SiteMap**
 中心Site Map汇总所有的信息Burp已经收集到的有关地址。你可以过滤并标注此信息，以帮助管理它，也可以使用SiteMap来手动测试工作流程。
-_ **Target Information**
+- **Target Information**
 SiteMap会在目标中以树形和表形式显示，并且还可以查看完整的请求和响应。树视图包含内容的分层表示，随着细分为地址，目录，文件和参数化请求的URL 。您还可以扩大有趣的分支才能看到进一步的细节。如果您选择树的一个或多个部分，在所有子分支所选择的项目和项目都显示在表视图。
 该表视图显示有关每个项目（URL ， HTTP状态代码，网页标题等）的关键细节。您可以根据任意列进行排序表（单击列标题来循环升序排序，降序排序，和未排序） 。如果您在表中选择一个项目，请求和响应（如适用）该项目显示在请求/响应窗格。这包含了请求和响应的HTTP报文的编辑器，提供每封邮件的详细分析。
 站点地图汇总所有的信息BurpSuite已经收集到的有关申请。这包括：
@@ -303,13 +303,13 @@ SiteMap会在目标中以树形和表形式显示，并且还可以查看完整�
 由用户手动添加的任何项目，从其它工具的输出。
 ```
 已请求在SiteMap中的项目会显示为黑色。尚未被请求的项目显示为灰色。默认情况下（与被动蜘蛛(passviely scan this host)启用） ，当你开始浏览一个典型的应用，大量的内容将显示为灰色之前，你甚至得到尽可能要求，因为BurpSuite发现在您所请求的内容链接到它。您可以删除不感兴趣的地址
-![](https://lyxw.github.io/assets/img/articles/burp16.png)
+![](https://lyxw.github.io/assets/img/articles/burp15.png)
 
-_ **Display Filter**
+- **Display Filter**
 Sitemap可以用来隐藏某些内容从视图中，以使其更易于分析和对你感兴趣的工作内容的显示过滤器 Sitemap上方的过滤栏描述了当前的显示过滤器。点击过滤器栏打开要编辑的过滤器选项。该过滤器可以基于以下属性进行配置：
 Request type 你可以只显示在范围内的项目，只能与反应项目，或者带参数的请求。 MIME type 您可以设定是否显示或隐藏包含各种不同的MIME类型，如HTML，CSS或图像的响应。 Status code 您可以设定是否要显示或隐藏各种HTTP状态码响应。 Search term 您可以过滤对反应是否不包含指定的搜索词。您可以设定搜索词是否是一个文字字符串或正则表达式，以及是否区分大小写。如果您选择了“消极搜索”选项，然后不匹配的搜索词唯一的项目将被显示。 File extension 您可以设定是否要显示或隐藏指定的文件扩展名的项目。 Annotation 您可以设定是否显示使用用户提供的评论或仅亮点项目。
 
-_ **Annotations**
+- **Annotations**
 通过添加注释和批注亮点代理历史记录项。这可能是有用的描述不同要求的目的，并标记了进一步查看。
 您可以通过添加注释和批注亮点代理历史记录项。这可能是有用的描述不同要求的目的，并标记了进一步查看。
 ```
@@ -324,5 +324,5 @@ _ **Annotations**
 
 **Scope**
 Target scope设置，可以从SiteMap中添加也可以手动添加扫描范围到Scope。你可以在Target SiteMap和Proxy history上设置只显示在范围内的项目。并且可以设置代理拦截只有在范围内的请求和响应。Spider会扫描在范围内的地址。专业版还可以设置自动启动在范围内项目的漏洞扫描。您可以配置Intruder和Repeater跟随重定向到任何在范围内的网址。发送Burp目标以适当的方式执行行动，只针对你感兴趣并愿意攻击项目。
-![](https://lyxw.github.io/assets/img/articles/burp17.png)
+![](https://lyxw.github.io/assets/img/articles/burp16.png)
 范围定义使用的URL匹配规则两个表 - 一个“包括(include)”列表和“exclude(排除)”列表中。Burp根据一个URL地址来决定，如果它是目标范围之内，这将被视为是在范围上如果URL匹配至少一个“include”在内的规则，不符合“exclude”规则。这样能够定义特定的主机和目录为大致范围内，且距离该范围特定的子目录或文件（如注销或行政职能）排除。
