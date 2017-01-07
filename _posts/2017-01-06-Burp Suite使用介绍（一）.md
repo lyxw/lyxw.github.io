@@ -281,20 +281,27 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 
 **Miscellaneous**
 控制Burp代理的行为的一些具体细节。下列选项可用：
+
 - **Use HTTP/1.0 in requests to server**
 该选项控制BurpSuite代理是否强制在请求目标服务器的HTTP 1.0版。默认设置是使用任何的HTTP版本所使用的浏览器。然而，一些遗留服务器或应用程序可能需要1.0版本才能正常工作。
+
 - **Use HTTP/1.0 in responses to client**
 目前所有的浏览器都支持这两个版本1.0和HTTP 1.1 。从1.0版本开始已经减少了一些功能，迫使使用1.0版本有时会很有用，以控制浏览器的行为的各个方面，例如防止企图执行HTTP流水线。
+
 - **Set response header “Connection:close”**
 这个选项也可能是有用的，以防止HTTP流水线在某些情况下。
 Unpack gzip / deflate in requests
 某些应用程序（通常是那些使用自定义客户端组件） ，压缩在请求消息体。该选项控制BurpProxy是否自动解压缩压缩请求主体。请注意，某些应用程序可能被破坏，如果他们期望的压缩体和压缩已通过Burp被删除。
+
 - **Unpack gzip / deflate in responses**
 大多数浏览器接受的gzip和响应紧缩压缩的内容。该选项控制BurpSuite代理是否自动解压缩压缩响应机构。请注意，您可以经常防止服务器试图通过删除请求（可能使用BurpProxy的匹配和替换功能）的Accept-Encoding头压缩的响应。 Disable web interface at http://burp - 如果你不得不配置你的听众接受无保护的接口上的连接，并希望阻止他人接触到Burp浏览器控件，此选项可能有用。
+
 - **Suppress Burp error messages** 
 当某些错误时，默认情况下BurpSuite返回有意义的错误信息到浏览器。如果你想在隐身模式下运行Burp，履行人在这方面的中间人攻击的受害者用户，那么它可能是有用的抑制这些错误信息来掩盖一个事实，即Burp是参与。
+
 - **Disable logging to history and site map** 
 此选项可以防止Burp从记录任何请求到代理服务器的历史或目标站点地图。如果您使用的是Burp代理对于一些特定用途，如身份验证到上游服务器或进行匹配和替换操作，并且要避免产生内存和存储开销采伐牵扯它可能是有用的。
+
 - **Enable interception at startup** 
 此选项可让您设定是否在Burp时启动代理截获应该启用。您可以选择始终启用拦截，始终禁用拦截，或者从Burp上次关闭恢复设置。
 
