@@ -219,12 +219,6 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 如果配置了这个选项，Burp会在每次请求转发到指定的端口，而不必受限于浏览器所请求的目标。
 **Force use of SSL**
 如果配置了这个选项，Burp会使用HTTPS在所有向外的连接，即使传入的请求中使用普通的HTTP。您可以使用此选项，在与SSL相关的响应修改选项结合，开展sslstrip般的攻击使用Burp，其中，强制执行HTTPS的应用程序可以降级为普通的HTTP的受害用户的流量在不知不觉中通过BurpProxy代理。
-**Redirect to host** 
-如果配置了这个选项，Burp会在每次请求转发到指定的主机，而不必受限于浏览器所请求的目标。需要注意的是，如果你正使用该选项，则可能需要配置匹配/替换规则重写的主机头中的请求，如果服务器中，您重定向请求预期，不同于由浏览器发送一个主机头。
-**Redirect to port**
-如果配置了这个选项，Burp会在每次请求转发到指定的端口，而不必受限于浏览器所请求的目标。
-**Force use of SSL** 
-如果配置了这个选项，Burp会使用HTTPS在所有向外的连接，即使传入的请求中使用普通的HTTP。您可以使用此选项，在与SSL相关的响应修改选项结合，开展sslstrip般的攻击使用Burp，其中，强制执行HTTPS的应用程序可以降级为普通的HTTP的受害用户的流量在不知不觉中通过BurpProxy代理。
 注意：每一个重定向选项都可以单独使用。因此，例如，可以将所有请求重定向到一个特定的主机，同时保留原来的端口和协议在每个原始请求中使用。隐形BurpProxy的支持允许非代理感知客户端直接连接到监听。
 - **Certificate**
 这些设置控制呈现给客户端的SSL服务器的SSL证书。使用这些选项可以解决一些使用拦截代理时出现的SSL问题：
@@ -235,14 +229,6 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 ```
 下列选项可用：
 **Use a self-signed certificate**
-一个简单的自签名SSL证书提交给您的浏览器，它总是导致SSL警告。
-**Generate CA-signed per-host certificate** 
-这是默认选项。安装后，BurpSuite创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次BurpSuite运行。当你的浏览器发出SSL连接到指定的主机，Burp产生该主机，通过CA证书签名的SSL证书。您可以安装BurpSuite的CA证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或Burp的其他实例使用CA证书。
-**Generate a CA-signed certificate with a specific hostname** 
-这类似于前面的选项;然而，Burp会产生一个单一的主机证书与每一个SSL连接使用，使用您指定的主机名。在进行无形的代理时，此选项有时是必要的，因为客户端没有发送连接请求，因此Burp不能确定SSL协议所需的主机名。你也可以安装BurpSuite的CA证书作为受信任的根。
-**Use a custom certificate** 
-此选项使您可以加载一个特定的证书（在PKCS＃12格式）呈现给你的浏览器。如果应用程序使用它需要特定的服务器证书（例如一个给定序列号或证书链）的客户端应该使用这个选项。
-**Use a self-signed certificate** 
 一个简单的自签名SSL证书提交给您的浏览器，它总是导致SSL警告。
 **Generate CA-signed per-host certificate** 
 这是默认选项。安装后，BurpSuite创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次BurpSuite运行。当你的浏览器发出SSL连接到指定的主机，Burp产生该主机，通过CA证书签名的SSL证书。您可以安装BurpSuite的CA证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或Burp的其他实例使用CA证书。
