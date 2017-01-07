@@ -160,7 +160,7 @@ Burp Proxy相当于BurpSuite的心脏，通过拦截，查看和修改所有的�
 您可以通过单击任何列标题进行升序或降序排列。如果您在表中双击选择一个项目地址，会显示出一个详细的请求和响应的窗口。或者右击选择`Show new history window`
 ![](https://lyxw.github.io/assets/img/articles/burp7.png)
 
-**Display Filter**
+###Display Filter
 Proxy histroy有一个可以用来在视图中隐藏某些内容的功能，以使其更易于分析和你感兴趣的工作内容的显示过滤。 History Table上方的过滤栏描述了当前的显示过滤器。点击过滤器栏打开要编辑的过滤器选项。该过滤器可以基于以下属性进行配置：
 ![](https://lyxw.github.io/assets/img/articles/burp8.png)
 - **Request type**
@@ -187,7 +187,7 @@ Show only in-scope items--勾选则显示在范围内的项目，反之。
 **Annotations**
 您可以通过添加注释和批注亮点代理历史记录项。这可能是有用的描述不同要求的目的，并标记了进一步查看。 两种方式添加亮点： 1)使用在最左边的表列中的下拉菜单中突出显示单个项目。 2)可以突出显示使用上下文菜单中的“亮点”项目的一个或多个选定的项目。 两种方法添加注释： 1)双击相关条目，注释列中，添加或编辑就地评论。 2)发表评论使用上下文菜单中的“添加注释”项目的一个或多个选定的项目。 除了以上两种，您也可以注释项目，它们出现在拦截选项卡，这些都将自动出现在历史记录表。 当您已经注明想要的请求，您可以使用列排序和显示过滤器后迅速找到这些项目。
 
-**Options**
+###Options
 设置代理监听、请求和响应，拦截反应，匹配和替换，ssl等。
 
 **Proxy Listeners**
@@ -278,6 +278,7 @@ Unpack gzip / deflate in requests - 某些应用程序（通常是那些使用�
 
 ##Target功能##
 目标工具包含了SiteMap，用你的目标应用程序的详细信息。它可以让你定义哪些对象在范围上为你目前的工作，也可以让你手动测试漏洞的过程。
+
 ###Using Burp Target
 在地址栏输入www.baidu.com，如图
 ![](https://lyxw.github.io/assets/img/articles/burp11.png)
@@ -285,14 +286,10 @@ Unpack gzip / deflate in requests - 某些应用程序（通常是那些使用�
 ![](https://lyxw.github.io/assets/img/articles/burp12.png)
 针对地址右击显示当前可以做的一些动作操作等功能。左图 针对文件右击显示当前可以做一些动作操作等功能。如图：
 ![](https://lyxw.github.io/assets/img/articles/burp13.png)
-**Scope**
-这个主要是配合Site map做一些过滤的功能，如图：
-![](https://lyxw.github.io/assets/img/articles/burp14.png)
-Include in scope就是扫描地址或者拦截历史记录里右击有个add to scope就是添加到这了，也可以自己手动添加。
-Target分为site map和scope两个选项卡
-**SiteMap**
+
+###Site Map
 中心Site Map汇总所有的信息Burp已经收集到的有关地址。你可以过滤并标注此信息，以帮助管理它，也可以使用SiteMap来手动测试工作流程。
-- **Target Information**
+**Target Information**
 SiteMap会在目标中以树形和表形式显示，并且还可以查看完整的请求和响应。树视图包含内容的分层表示，随着细分为地址，目录，文件和参数化请求的URL 。您还可以扩大有趣的分支才能看到进一步的细节。如果您选择树的一个或多个部分，在所有子分支所选择的项目和项目都显示在表视图。
 该表视图显示有关每个项目（URL ， HTTP状态代码，网页标题等）的关键细节。您可以根据任意列进行排序表（单击列标题来循环升序排序，降序排序，和未排序） 。如果您在表中选择一个项目，请求和响应（如适用）该项目显示在请求/响应窗格。这包含了请求和响应的HTTP报文的编辑器，提供每封邮件的详细分析。
 站点地图汇总所有的信息BurpSuite已经收集到的有关申请。这包括：
@@ -303,13 +300,13 @@ SiteMap会在目标中以树形和表形式显示，并且还可以查看完整�
 由用户手动添加的任何项目，从其它工具的输出。
 ```
 已请求在SiteMap中的项目会显示为黑色。尚未被请求的项目显示为灰色。默认情况下（与被动蜘蛛(passviely scan this host)启用） ，当你开始浏览一个典型的应用，大量的内容将显示为灰色之前，你甚至得到尽可能要求，因为BurpSuite发现在您所请求的内容链接到它。您可以删除不感兴趣的地址
-![](https://lyxw.github.io/assets/img/articles/burp15.png)
+![](https://lyxw.github.io/assets/img/articles/burp14.png)
 
-- **Display Filter**
+**Display Filter**
 Sitemap可以用来隐藏某些内容从视图中，以使其更易于分析和对你感兴趣的工作内容的显示过滤器 Sitemap上方的过滤栏描述了当前的显示过滤器。点击过滤器栏打开要编辑的过滤器选项。该过滤器可以基于以下属性进行配置：
 Request type 你可以只显示在范围内的项目，只能与反应项目，或者带参数的请求。 MIME type 您可以设定是否显示或隐藏包含各种不同的MIME类型，如HTML，CSS或图像的响应。 Status code 您可以设定是否要显示或隐藏各种HTTP状态码响应。 Search term 您可以过滤对反应是否不包含指定的搜索词。您可以设定搜索词是否是一个文字字符串或正则表达式，以及是否区分大小写。如果您选择了“消极搜索”选项，然后不匹配的搜索词唯一的项目将被显示。 File extension 您可以设定是否要显示或隐藏指定的文件扩展名的项目。 Annotation 您可以设定是否显示使用用户提供的评论或仅亮点项目。
 
-- **Annotations**
+**Annotations**
 通过添加注释和批注亮点代理历史记录项。这可能是有用的描述不同要求的目的，并标记了进一步查看。
 您可以通过添加注释和批注亮点代理历史记录项。这可能是有用的描述不同要求的目的，并标记了进一步查看。
 ```
@@ -322,7 +319,11 @@ Request type 你可以只显示在范围内的项目，只能与反应项目，�
 ```
 除了以上两种，您也可以注释项目，它们出现在拦截选项卡，这些都将自动出现在历史记录表。 当您已经注明想要的请求，您可以使用列排序和显示过滤器后迅速找到这些项目。
 
-**Scope**
+###Scope
+这个主要是配合Site map做一些过滤的功能，如图：
+![](https://lyxw.github.io/assets/img/articles/burp15.png)
+Include in scope就是扫描地址或者拦截历史记录里右击有个add to scope就是添加到这了，也可以自己手动添加。
+Target分为site map和scope两个选项卡
 Target scope设置，可以从SiteMap中添加也可以手动添加扫描范围到Scope。你可以在Target SiteMap和Proxy history上设置只显示在范围内的项目。并且可以设置代理拦截只有在范围内的请求和响应。Spider会扫描在范围内的地址。专业版还可以设置自动启动在范围内项目的漏洞扫描。您可以配置Intruder和Repeater跟随重定向到任何在范围内的网址。发送Burp目标以适当的方式执行行动，只针对你感兴趣并愿意攻击项目。
 ![](https://lyxw.github.io/assets/img/articles/burp16.png)
 范围定义使用的URL匹配规则两个表 - 一个“包括(include)”列表和“exclude(排除)”列表中。Burp根据一个URL地址来决定，如果它是目标范围之内，这将被视为是在范围上如果URL匹配至少一个“include”在内的规则，不符合“exclude”规则。这样能够定义特定的主机和目录为大致范围内，且距离该范围特定的子目录或文件（如注销或行政职能）排除。
