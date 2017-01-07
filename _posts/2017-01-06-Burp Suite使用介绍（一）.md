@@ -232,19 +232,14 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 您可以与拒绝连接到服务器，如果接收到无效的SSL证书胖客户端应用程序的工作。 
 ```
 下列选项可用：
-
 **Use a self-signed certificate**
 一个简单的自签名SSL证书提交给您的浏览器，它总是导致SSL警告。
-
 **Generate CA-signed per-host certificate** 
 这是默认选项。安装后，BurpSuite创造了一个独特的自签名的证书颁发机构（CA）证书，并将此计算机上使用，每次BurpSuite运行。当你的浏览器发出SSL连接到指定的主机，Burp产生该主机，通过CA证书签名的SSL证书。您可以安装BurpSuite的CA证书作为在浏览器中受信任的根，从而使每个主机的证书被接受，没有任何警报。您还可以导出其他工具或Burp的其他实例使用CA证书。
-
 **Generate a CA-signed certificate with a specific hostname** 
 这类似于前面的选项;然而，Burp会产生一个单一的主机证书与每一个SSL连接使用，使用您指定的主机名。在进行无形的代理时，此选项有时是必要的，因为客户端没有发送连接请求，因此Burp不能确定SSL协议所需的主机名。你也可以安装BurpSuite的CA证书作为受信任的根。
-
 **Use a custom certificate** 
 此选项使您可以加载一个特定的证书（在PKCS＃12格式）呈现给你的浏览器。如果应用程序使用它需要特定的服务器证书（例如一个给定序列号或证书链）的客户端应该使用这个选项。
-
 - **Exporting and Importing the CA Certificate**
 您可以导出您安装特定的CA证书在其他工具或BurpSuite的其他情况下使用，并且可以导入证书Burp在当前实例使用。 您可以选择要导出的证书只（用于导入到您的浏览器或其他设备的信任），或者你可以同时导出的证书及其私钥。
 注意：您不应该透露的私钥证书给任何不可信的一方。拥有你的证书和密钥的恶意攻击者可能可以，即使你不使用Burp拦截浏览器的HTTPS流量。
@@ -288,27 +283,20 @@ BurpSuite让您创建多个代理服务器的侦听器，并提供了丰富的�
 
 **Miscellaneous**
 控制Burp代理的行为的一些具体细节。下列选项可用：
-
 - **Use HTTP/1.0 in requests to server**
 该选项控制BurpSuite代理是否强制在请求目标服务器的HTTP 1.0版。默认设置是使用任何的HTTP版本所使用的浏览器。然而，一些遗留服务器或应用程序可能需要1.0版本才能正常工作。
-
 - **Use HTTP/1.0 in responses to client**
 目前所有的浏览器都支持这两个版本1.0和HTTP 1.1 。从1.0版本开始已经减少了一些功能，迫使使用1.0版本有时会很有用，以控制浏览器的行为的各个方面，例如防止企图执行HTTP流水线。
-
 - **Set response header “Connection:close”**
 这个选项也可能是有用的，以防止HTTP流水线在某些情况下。
-Unpack gzip / deflate in requests
+- **Unpack gzip / deflate in requests**
 某些应用程序（通常是那些使用自定义客户端组件） ，压缩在请求消息体。该选项控制BurpProxy是否自动解压缩压缩请求主体。请注意，某些应用程序可能被破坏，如果他们期望的压缩体和压缩已通过Burp被删除。
-
 - **Unpack gzip / deflate in responses**
 大多数浏览器接受的gzip和响应紧缩压缩的内容。该选项控制BurpSuite代理是否自动解压缩压缩响应机构。请注意，您可以经常防止服务器试图通过删除请求（可能使用BurpProxy的匹配和替换功能）的Accept-Encoding头压缩的响应。 Disable web interface at http://burp - 如果你不得不配置你的听众接受无保护的接口上的连接，并希望阻止他人接触到Burp浏览器控件，此选项可能有用。
-
 - **Suppress Burp error messages** 
 当某些错误时，默认情况下BurpSuite返回有意义的错误信息到浏览器。如果你想在隐身模式下运行Burp，履行人在这方面的中间人攻击的受害者用户，那么它可能是有用的抑制这些错误信息来掩盖一个事实，即Burp是参与。
-
 - **Disable logging to history and site map** 
 此选项可以防止Burp从记录任何请求到代理服务器的历史或目标站点地图。如果您使用的是Burp代理对于一些特定用途，如身份验证到上游服务器或进行匹配和替换操作，并且要避免产生内存和存储开销采伐牵扯它可能是有用的。
-
 - **Enable interception at startup** 
 此选项可让您设定是否在Burp时启动代理截获应该启用。您可以选择始终启用拦截，始终禁用拦截，或者从Burp上次关闭恢复设置。
 
