@@ -16,7 +16,7 @@ DEFAULT_DATE_FORMAT = ('%Y-%m-%d(%A) %H:%M')
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'hide'
 
-THEME = "themes/blueidea"
+THEME = "themes/gum"
 
 
 # Feed generation is usually not desired when developing
@@ -32,7 +32,7 @@ MENUITEMS = [('Home', SITEURL),
             ('Archives', 'archives.html'),
             ('Category', 'categories.html'),
             ('Tag', 'tags.html'),
-	    ('About', 'authors.html'),]
+	        ('About', 'authors.html'),]
 DEFAULT_PAGINATION = 10
 MD_EXTENSIONS = [
 	"extra",
@@ -58,7 +58,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('twitter', 'http://twitter.com/lyxw'),
-          ('lastfm', 'http://lastfm.com/user/lyxw'),
+          ('weibo', 'http://weibo.com/user/lyxw'),
           ('github', 'https://github.com/lyxw'),)
 
 #DEFAULT_PAGINATION = 10
