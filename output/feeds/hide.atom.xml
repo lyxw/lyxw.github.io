@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>lyxw blog - hide</title><link href="https://lyxw.github.io/" rel="alternate"></link><link href="https://lyxw.github.io/feeds/hide.atom.xml" rel="self"></link><id>https://lyxw.github.io/</id><updated>2017-01-13T20:20:00+08:00</updated><entry><title>使用Pelican搭建博客系统</title><link href="https://lyxw.github.io/build-blog-system-by-pelican.html" rel="alternate"></link><published>2017-01-13T18:20:00+08:00</published><updated>2017-01-13T20:20:00+08:00</updated><author><name>kylin</name></author><id>tag:lyxw.github.io,2017-01-13:/build-blog-system-by-pelican.html</id><summary type="html">&lt;p&gt;本文介绍了Pelican的特性；选择Pelican的理由以及从头安装配置，搭建出一个可运行的独立博客系统。&lt;/p&gt;</summary><content type="html">&lt;p&gt;本文介绍了Pelican的特性；选择Pelican的理由以及从头安装配置，搭建出一个可运行的独立博客系统。
-本文介绍了Pelican的特性；选择Pelican的理由以及从头安装配置，搭建出一个可运行的独立博客系统。
-本文介绍了Pelican的特性；选择Pelican的理由以及从头安装配置，搭建出一个可运行的独立博客系统。
-本文介绍了Pelican的特性；选择Pelican的理由以及从头安装配置，搭建出一个可运行的独立博客系统。&lt;/p&gt;</content><category term="python"></category><category term="pelican"></category></entry></feed>
