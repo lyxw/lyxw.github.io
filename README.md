@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # lyxw blog
 
 Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
@@ -36,7 +35,3 @@ Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具�
  图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
 - **其他**
  你可以设置侧边栏在博文页面中不显示。
-=======
-# lyxw.github.io
-blog
->>>>>>> origin/master
