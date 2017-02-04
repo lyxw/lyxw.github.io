@@ -1,98 +1,55 @@
-## lanyon-plus
+# jekyll-theme-EasyBook
 
-Based on Jekyll theme: [Lanyon](http://lanyon.getpoole.com) by [**Mark Otto**](https://github.com/mdo)
+Another Jekyll Blog Theme "EasyBook"
 
-* add-ons by [Samir Amin](http://sbamin.com)
-* [Site features](http://sbamin.com/disclosure#i-classfa-fa-thumbs-o-up-credits-for-site-featuresi) | [Example contents](https://dyndna.github.io/lanyon-plus/blog/2013/01/01/example-content/)
-* License: Open sourced under the [MIT license](https://sbamin.com/disclosure/#theme-major-credit--license).
+Start blogging with a simple but powerful theme.
 
-[![Build Status](https://travis-ci.org/dyndna/lanyon-plus.svg?branch=master)](https://travis-ci.org/dyndna/lanyon-plus)
+## Features
 
-[Demo](http://dyndna.github.io/lanyon-plus) | [Download v1.1.0](https://github.com/dyndna/lanyon-plus/releases/tag/v1.1.0)
+- Everything Basic Jekyll has.
+- **Pagination** is enabled.
+- **Comments** using Disqus or 多说.
+- **TOC** makes reading easier.
+- **Profile** including your links and avatar on the sidebar.
+- *And more...*
 
-### Required edits:
+## Install
 
-#### _config.yml
+Read [Quick Guide] to learn how to install and publish.
 
-*   Edit lines where text string `foo` is present with relevant information. 
-*   Add relevant author and owner information
-    *   For proper sidebar, meta info below post title, and footer bar, add at least twitter, google plus info under `owner` and `sidebar` section.
-    *   Uncomment and add relevant user names/keys to enable features, e.g., google analytics, disqus comments, twitter widget, google custom search.
+Read [Welcome to Jekyll and EasyBook][helloPost] and [Jekyll][jekyll] for further information.
 
-#### CNAME
+**If need help, please:**
 
-*   Read [Using a custom domain with GitHub Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/) for set-up details.
-*   If you are hosting website on domain other than `github.io`, rename `CNAME.sample` file to `CNAME`, and add your custom domain name, e.g., `example.com` (only one domain is allowed), otherwise remove `CNAME` file if you want to host at default `github.io`. 
-*   If you are hosting website on `github.io`, replace `example.com` with `https://<github-username>.github.io/<repository_name>` (for project site) or `https://<github-username>.github.io` (for user site) under `site.url` and `site.urlimg` in `_config.yml` and `_prose.yml` file.
+ - [**Read Wiki pages**](https://github.com/laobubu/jekyll-theme-EasyBook/wiki)
+ - **Google it**
+ - [**Submit an issue**](https://github.com/laobubu/jekyll-theme-EasyBook/issues/new)
 
-#### .travis.yml
-*   See more at [https://travis-ci.org/getting_started](https://travis-ci.org/getting_started)
+## Donate
 
-#### _prose.yml
+Buy me a coffee if you find EasyBook useful for you :smiley:
 
-*   [https://github.com/prose/prose/wiki/Getting-Started](https://github.com/prose/prose/wiki/Getting-Started)
-*   Edit `example.com` with your domain name.
-*   You may edit names for custom categories.
+Visit <http://laobubu.net/donate.html>
 
-#### robots.txt
+## Demo
 
-* replace `example.com` with your valid url.
-* Edit search engine inclusion/exclusion if desired.
+[laobubu's blog](http://blog.laobubu.net) | [empty site](http://laobubu.github.io/jekyll-theme-EasyBook)
 
-#### page specific edits
+![Homepage](https://ooo.0o0.ooo/2016/02/11/56bc997c65daf.png)
 
-*   `_data/socialmedia.html`
-    *   Replace user `foo` with appropriate username
+## License
 
-*   `_includes/`
-    *   Check if file paths for appropriate urls have valid css files, scripts, icons, and images in `head.html` and `head_minimal.html`, else comment html tags which are not being used.
-    *   Also, check if variables (twitter, google plus, linkedin, google analytics key and disqus username, etc.) are specified in `_config.yml` located under root path.
-    *   You may edit `meta_info.html`, `footer.html` and similar include files to add/remove elements in page meta bar, footer, etc.
-    *   For publications page, `mypubs.html` and `myaoi.html` are trimmed outputs from [zot_bib_web](https://github.com/davidswelt/zot_bib_web). Github pages can not dynamically build these pages. Alternately, you may export `bib` format for publications under `/files/` directory which can be parsed dynamically using [bibbase.org](http://bibbase.org)
-    *   `_includes/footer.html`: Edit copyright information as needed.
-*   `_layouts`
-    *   To add/remove/reorder page/post contents, edit `default.html` plus `page.html` or `post.html`.
-*   `_posts`
-    *   Live blog posts goes here with markdown formatted post. File name format must have following date-title format `yyyy-mm-dd-title.md` for jekyll to render blog post correctly. 
-    *   YAML sample header shows all available options. Minimal required elements are: layout, title and date. Date tag overrides date given in post file name.
-*   `blog/index.html`
-    *   Edit blog title and description.
-*   `images/`
-    *   Under `icons` directory, keep appropriate sized favicons and thumbnails as specified in `_includes/head.html` and `_includes/head_minimal.html`
-    *   Also, keep `favicon.png` and `favicon.ico` in root directory.
-    *   Final, `images/icons/` should have following images with exact filenames and image size as specified in respective filenames. These images can be generated using online *favicon generator*. Replace `foo` with your site title or other name if desired.
+```
+The MIT License (MIT)
+Copyright (c) 2016 laobubu
 
-~~~
-example.com/images/icons/apple-touch-icon-precomposed.png
-example.com/images/icons/apple-touch-icon-72x72-precomposed.png
-example.com/images/icons/apple-touch-icon-114x114-precomposed.png
-example.com/images/icons/apple-touch-icon-144x144-precomposed.png
-example.com/images/icons/apple-touch-icon-180x180.png
-example.com/images/icons/android-icon-192x192.png
-~~~
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-*   `pages/about.md`
-    *   YAML variable `imagefeature` shoud have image path relative to `images/` directory, i.e., `foo.png` will link to `example.com/images/foo.png`
-    *   Specify `site.owner.avatar` and `site.owner.twitter` along with other variables in `_config.yml`
-*   `syspages/`:
-    *   Edit page title and description in YAML front matter.
-    *   For web search to work, specify [Google Custom Search Engine](https://cse.google.com) API key for `google_search` variable.
-    *   Tag generation is experimental and dynamic size for tag box may need to be adjusted if you have more than 100 posts with one or two frequently occurring tags. 
-    *   All `{% for ... %}...{% endfor %}` loop operations will increase site build time, and remove such features (tags, meta info, related posts, etc.) under `_includes`, `_layouts` and `syspages` if required.
-*   `pages/contact.md`
-    *   Edit page title and description.
-    *   Edit address, driving direction url, etc.
-*   `pages/cv.md`
-    *   Edit `_config.yml` to add twitter, google plus, linkedin, google scholar, ORCID profile info under owner heading.   
-    *   Add pdf at `{{ site.url }}/cv/cv.pdf` 
-*   `pages/publications.md`
-    *   Add your publications at `/files/mypubs.bib` and `_includes/mypubs.html`. See above under `_includes` for more.
-*   `pages/disclosure.md`
-    *   Appreciated if you keep relevant credits in disclosure page.
-*   `humans.txt`
-    *   Replace `foo` with your name.
-*   `rfeed.xml`
-    *   Not required unless you are cross-posting about R language on blog aggregation site(s).
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-END
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
 
+[Quick Guide]: https://github.com/laobubu/jekyll-theme-EasyBook/wiki/Quick-Guide
+[helloPost]: http://laobubu.github.io/jekyll-theme-EasyBook/archivers/hello
+[jekyll]: http://jekyllrb.com/
