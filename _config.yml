@@ -7,12 +7,13 @@ baseurl: ""
 #timezone: Asia/Chongqing
 description: >
   One or more sentences introducing this blog.
-  personal blog
+
 # Your information
 # email: your_email@example.com
 author: lyxw
 avatar: "/imgs/avatar.jpg"
-profile: Hello everyone!# One sentence introducing yourself.
+profile: Hello everyone!  
+# One sentence introducing yourself.
 twitter_username: lyxw
 github_username:  lyxw
 weibo_username:  lyxw
