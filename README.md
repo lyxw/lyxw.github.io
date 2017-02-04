@@ -1,35 +1,16 @@
-# Researcher
+# jekyll-simple
 
-### [Demo Website](https://ankitsultana.me/researcher)
+## simple
+simple is a theme designed for blogger using static site generator like jekyll, Hexo etc.
 
-A clean, single column, monospace resume template built for jekyll
+Especially for those who writes in both Chinese and English. The font-type setting looks really good when writers use Chinese mixed with English.
 
-### Installation
+Supposedly, this could work with Japanese as well but never had a chance to try.
 
-Simply fork the repository and edit away.
+## Story behind this theme
 
-### Customization
+It has been long that using font with Chinese in web was a tedious and time-consuming work. It would be almost impossible to make different OS or devices to look the same.
 
-* You can edit the `.md` (markdown) files as you see fit. You can also add some other markdown file, say `foo.md` in the root directory of the repository. It will then be accessible like so `{{ url of your website }}/foo`.
+iOS 9 has pulished some new fonts in Chinese and I decided to make one theme that looks good on iOS devices, at the same time, making it acceptable on computers using other fonts.
 
-* You can of course remove `contact.md` if you don't want it
-
-* To set the heading, edit the `title` variable in `_config.yml`
-
-* To edit the `links` mentioned on the navigation bar, edit the file `_data/nav.yml`
-
-* You can change the accent (color of hyperlinks) by editing the `accent` variable in `_sass/vars.scss`
-
-* You can setup google analytics, by setting `tracking_id` in `_config.yml`
-
-* To add a profile picture, make sure to give the image tag the class `profile-picture`. In other words,do it like so:
-
-```html
-<img class="profile-picture" src="sherlock.jpg">
-```
-
-**Note:** Customizing the accent color might cause merge conflicts if you later try to merge from `bk2dcradle/researcher` to fetch updates/patches etc. (applicable only if you have forked).
-
-### License
-
-[GNU GPL v3](https://github.com/bk2dcradle/researcher/blob/gh-pages/LICENSE)
+So mobile goes first, then the macOS.
