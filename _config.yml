@@ -11,7 +11,7 @@ keywords: "Guovz"
 
 # 用户信息设置
 weibo_username: Guovz
-github_username: guovz
+github_username: lyxw
 
 # Markdown设置
 kramdown:
@@ -24,7 +24,7 @@ kramdown:
 
 # 地址设置
 baseurl: "/jekyll-pithy"
-url: "http://127.0.0.1:4000"
+url: "https://lyxw.github.io"
 
 
 # 分页设置
