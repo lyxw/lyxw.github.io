@@ -1,26 +1,15 @@
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>Copyright &copy; 2016 Sci Blog<p>
-                </div>
-                <div class="col-lg-6">
-                    <p style="float: right;">Jekyll theme by <a href="http://www.airrayagroup.com/">AIR RAYA GROUP</a></p>
-                </div>
+            <div class="custom-footer" style="display: block;">
+            <div class="footer-social-icons">
+            <ul class="social-icons">
+            {% for social_item in site.data.socialmedia %}
+              {% if social_item.url contains 'http' %}
+              {% assign domain = '' %}
+              {% else %}
+              {% assign domain = site.url %}
+            {% endif %}
+            <li><a href="{{ domain }}{{ social_item.url }}" rel="me" {% if social_item.url contains 'http' %} target="_blank" {% endif %} class="social-icons" title="{{ social_item.title }}"> <i class="{{ social_item.class }} fa-2x"></i></a></li>
+            {% endfor %}          
+            </ul>
             </div>
-        </div>
-    </footer>
-	
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+            <h6 class="text-footer"><a rel="license" href="{{ site.url }}/disclosure/" title="CC BY-NC-SA 4.0 License, link to site disclosure" class="social-icon"><i class="fa fa-creative-commons"></i></a> <a rel="license" href="{{ site.url }}/disclosure/" title="CC BY-NC-SA 4.0 License, link to site disclosure">2015-{{ site.time | date: '%Y' }}</a>: <a href="{{ site.url }}" title="Home">example.com</a> | <a href="{{ site.url }}/about/" rel="me">About</a></h6>
+            </div>
