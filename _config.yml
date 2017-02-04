@@ -7,7 +7,7 @@
 
 # Site settings
 title: "lyxw blog"
-# email: your-email@domain.com
+email: your-email@domain.com
 description: >  # this means to ignore newlines until "baseurl:"
   Thunder is a lightning fast responsive theme based on default Jekyll theme. It is minimal and free from JavaScript. It has a css file of size 5kb. 
 url: "https://lyxw.github.io"  # the base hostname & protocol for your site
