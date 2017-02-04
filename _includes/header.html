@@ -1,43 +1,39 @@
-  <header id="header">
-    <div class="headerWrap clearfix">
-      <a class="myFont title css2dcc4b9955748" href="{{ "/home" | prepend: site.baseurl }}">{{ site.title }}</a>
-
-      <nav>
-        <ul>
-          <li><a href="{{ "/home" | prepend: site.baseurl }}" class="myFont css2dcc4b9955748">Home</a></li>
-          <li><a href="{{ "/index" | prepend: site.baseurl }}" class="myFont css2dcc4b9955748">Blog</a></li>
-          <li><a href="{{ "/about" | prepend: site.baseurl }}" class="myFont css2dcc4b9955748">About</a></li>
-        </ul>
-      </nav>
-
-<div class="search-tool" style="float: left;height: 45px;line-height: 45px;margin-left: 12px;">
-    <input type="text" class="form-control search-content" id="search-content" style="display: inline-block !important; 
-    color: #49525c;
-    font-size: 14px;
-    line-height: 17px;
-    background-color: #e1eaf2;
-    border: 1px solid #045bb2;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,.2),0 1px 0 rgba(255,255,255,.1);
-    outline: 0;
-    box-sizing: border-box;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;" placeholder="Search for what you are interested in...." />
-</div>
-
-<link rel="stylesheet" href="{{ "/search/css/cb-search.css" | prepend: site.baseurl }}">
-
-<script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/search/js/cb-search.js" | prepend: site.baseurl }}"></script>
-
-      <a href="{{ site.resume }}" class="master">
-        <div class="avatarWrap">
-          <img src="{{ "/assets/avatar.jpg" | prepend: site.baseurl }}" alt="{{ site.author }}" style="max-width: 27px;" />
-        </div><span class="myFont css2dcc4b9955748">{{ site.author }}</span>
-      </a>
+<div class="header-panel shadow-z-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="row-picture">
+              <img id="about" class="logo-img" src="{{ site.logo }}" height="75px" width="75px">
+            </div>
+            <div class="row-details">
+              <h4 class="list-group-item-heading">{{ site.author }}</h4>
+              <p class="list-group-item-text">{{ site.about }}</p>
+              {% include social_links.html %}
+            </div>
+            <div class="navbar-header pull-right">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-2x fa-bars"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+            <h2 class="blog-title-pro">{{ page.title }}</h2>
+            <p class="info">
+              {% if page.date %}
+                <span class="time">{{ page.date | date_to_string }}</span>
+              {% endif %}
+              {% if page.categories.size > 0 %}
+                <span class="categories">
+                  &raquo; 
+                  {% for category in page.categories %}
+                    <a href="category/{{ category }}">{{ category }}</a>
+                    {% if forloop.last == false %}, {% endif %}
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <main class="clearfix">
-    <div class="content">
-      <div class="content-inner">

@@ -1,28 +1,21 @@
-# BoHu 
+## HCZ Material theme
 
-It's a simple jekyll blog theme. 
-  
-A style of ZhiHu - the best-known website to share knowledge in China.   
+This is a simple personal material theme, best suited for personal authors, programmars, bloggers. 
 
-In the ZhiHu, you can learn knowledge from all over the world.   
+### Demo
+* [http://aboutashu.com/hcz-jekyll-blog](http://aboutashu.com/hcz-jekyll-blog/)
 
-In the BoHu, you can share knowledge to all over the world!
+#### Feature
 
-1. **Use paging as 1,2,3,4,5......**   
-1. **Searchable for blog.**    
-1. **Classification is supported.**   
-1. **Good compatibility on mobile devices.**    
-1. **Built-in wordart for English and Chinese.**   
-1. **Music player.**   
-**......**
+* Sitemap and XML Feed
+* Projects and tags
+* Paginations in homepage
+* Posts under category
+* Related Posts
+* Highlight pre
+* Next & Previous Post
+* Disqus comment
 
-**Make it yours in under 10 minutes.**  
+#### Screenshot
 
-# Author
-
-[Clark Zhao](http://zhaoyuxiang.cn)
-
-
-# License
-
-Use MIT License.
+![Screenshot Home Page](https://raw.githubusercontent.com/ashutosh2k12/jekyllthemes/master/thumbnails/hcz-material.png  "Screenshot Home Page")
