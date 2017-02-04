@@ -18,6 +18,7 @@ url: "https://lyxw.github.io"
 # the base hostname & protocol for your site
 twitter_username: lyxw 
 github_username:  lyxw
+weibo_username:  lyxw
 
 # Build settings
 markdown: kramdown
