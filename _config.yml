@@ -1,55 +1,44 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/lyxw
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
-avatar_url: /static/img/avatar.jpg
+# Site settings
+title: BoHu
+url: "http://zhaoyuxiang.cn/blog"    # the protocol and hostname of your site, eg. `http://zhaoyuxiang.cn/blog`
+baseurl: "/bohu-jekyll-theme" # the prefix of your site uri, eg. `/bohu-jekyll-theme` or just one slash `/`
+#timezone: Asia/Shanghai
+description: 天道总司的个人博客网站,前端HTML、HTML5、CSS、CSS3、JavaScript、JQuery等编程经验总结分享。
+# Your information
+email: me@zhaoyuxiang.cn
+author: Clark #yourname #天道总司
+place: yourhometown #杭州
+domain: yourdoamain #互联网
+company: yourcompany #Jeeyoo
+position: yourjob #Technical Support
+school: yourschool #浙江科技学院
+major: yourmajoy #测控技术与仪器
+resume: "http://zhaoyuxiang.cn/cv"
+profile: Time is money. #yourmotto #聪明在于勤奋，天才在于积累。
+twitter_username: zyx19936688
+weibo_username:  zhaoyuxiang
+github_username:  Clark-Zhao
 
-enableTags: true
-tagarray: []
+# Comment Service (Disqus or 多说)
+#  choose one and un-comment the line to active it
+disqus_shortname: zhaoyuxiang   
+# get one: https://disqus.com/admin/signup/
+# duoshuo_shortname: clark-zhao  
+# get one: http://duoshuo.com/create-site/
 
-collections:
-  project:
-    output: true
-    permalink: /project/:path/
-
-social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
-    - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
-    - icon: fa-stack-exchange
-      link: "#"
-    - icon: fa-github
-      link: "https://github.com/lyxw"
-
-share:
-  twitter_username: agusmakmun6
-  fb_appid: 1749788565247320
-
-urls:
-    - text: About Me
-      url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
-
-url: "https://lyxw.github.io"
-baseurl: ""
-paginate: 20
-per_page: 20
-paginate_path: "/page:num/"
-markdown: kramdown
+permalink: /archivers/:title
 gems:
-  - jekyll-paginate
-  - jekyll-gist
+ - jekyll-paginate
+ - jekyll-gist
+ - jemoji
 
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
+# Build settings
+paginate: 2
+paginate_path: "/page:num"
+
+highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
