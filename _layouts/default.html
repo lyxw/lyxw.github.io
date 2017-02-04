@@ -1,24 +1,17 @@
----
-layout: compress
----
-
-
 <!DOCTYPE html>
-<html>
-
+<html lang="zh_cn">
   {% include head.html %}
+<body>
+<!-- 导航菜单 -->
+  {% include navbar.html%}
 
-  <body>
+  <div class="container page-content">
+    {{content}}
+  </div>
 
-    {% include header.html %}
+  {% include footer.html%}
 
-    <div class="page-content">
-      
-        {{ content }}
-     
-    </div>
-{% include footer.html %}
-  {% if site.analytics %}{% include analytics.html %}{% endif %}
-  </body>
-
+  {% include script.html %}
+  {% include baidu-analysis.html %}
+</body>
 </html>
