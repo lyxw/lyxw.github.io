@@ -1,56 +1,26 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+title: John Smith
+description: My Personal Blog
+author: John Smith
+logo: /static/img/avatar.png
+github: https://github.com/ashutosh2k12
+about: Freelance developer
 
-# Site settings
-title: Webjeda Gatok
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Gatok is a minimal jekyll theme with a 3d menu bar. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://lyxw.github.io" # the base hostname & protocol for your site
+baseurl: "https://lyxw.github.io"
+url: "https://lyxw.github.io"
+
+disqus_shortname: aboutashu
+google_analytics: UA-72862926-1
+
+share:
+  twitter_username: \#
+  fb_appid: 000000000000
 
 
-# Build settings
+enableTags: true
+tagarray: []
+
+paginate: 20
+per_page: 20
+paginate_path: "/page:num/"
 markdown: kramdown
-baseurl: #/gatok
-permalink: /:title/
-
-disqus-shortname: webjeda-demo
-
-
-#compress.html
-compress_html:
-  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
-  comments: ["<!-- ", " -->"]
-  endings: [all]
-  ignore:
-    envs: [local]
-  blanklines: false
-  profile: false
-  startings: []
-
-sass: 
-  style: compressed
-
-# analytics: UA-83979019-1
-
-version: 1.0
-
-gems: [jekyll-paginate, jekyll-seo-tag]
-
-  
-prose:
-  rooturl: ''
-  siteurl: 'https://lyxw.github.io/starter/'
-  relativeLinks: 'https://lyxw.github.io/starter/links.jsonp'
-  media: 'images'
-  ignore:
-    - index.md
-    - _config.yml
-    - /_layouts
-    - /_includes
-
+gems: [jekyll-paginate, jekyll-gist]
