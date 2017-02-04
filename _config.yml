@@ -9,9 +9,9 @@ description: >
   One or more sentences introducing this blog.
 
 # Your information
-email: your_email@example.com
-author: your_name
-avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
+# email: your_email@example.com
+author: lyxw
+avatar: "/imgs/avatar.jpg"
 profile: One sentence introducing yourself.
 twitter_username: lyxw
 github_username:  lyxw
@@ -21,7 +21,7 @@ github_username:  lyxw
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
-permalink: /archivers/:title
+permalink: /archivers/:title/:year/:month/:day
 gems:
  - jekyll-paginate
  - jekyll-gist
