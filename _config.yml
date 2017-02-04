@@ -16,7 +16,7 @@ url: "https://lyxw.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-baseurl: /gatok
+baseurl: #/gatok
 permalink: /:title/
 
 disqus-shortname: webjeda-demo
