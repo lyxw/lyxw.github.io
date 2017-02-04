@@ -1,26 +1,24 @@
-title: lyxw blog
-description: My Personal Blog
-author: lyxw
-logo: /static/img/avatar.png
-github: https://github.com/lyxw
-about: Freelance developer
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-baseurl: "https://lyxw.github.io"
-url: "https://lyxw.github.io"
+# Site settings
+title: Sciblog
+email: airrayagroup@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "/sciblog" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+author: AIRRAYA
 
-disqus_shortname: aboutashu
-google_analytics: UA-72862926-1
+# Gems
+gems: [jekyll-paginate]
 
-share:
-  twitter_username: \lyxw
-  fb_appid: 000000000000
-
-
-enableTags: true
-tagarray: []
-
-paginate: 20
-per_page: 20
-paginate_path: "/page:num/"
+# Build settings
 markdown: kramdown
-gems: [jekyll-paginate, jekyll-gist]
+paginate: 5
+paginate_path: 'page:num/'
+comments: true
+excerpt_separator: <!-- more -->
