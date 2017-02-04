@@ -1,8 +1,8 @@
-title: John Smith
+title: lyxw blog
 description: My Personal Blog
-author: John Smith
+author: lyxw
 logo: /static/img/avatar.png
-github: https://github.com/ashutosh2k12
+github: https://github.com/lyxw
 about: Freelance developer
 
 baseurl: "https://lyxw.github.io"
@@ -12,7 +12,7 @@ disqus_shortname: aboutashu
 google_analytics: UA-72862926-1
 
 share:
-  twitter_username: \#
+  twitter_username: \lyxw
   fb_appid: 000000000000
 
 
