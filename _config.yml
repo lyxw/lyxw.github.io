@@ -1,44 +1,62 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: lyxw blog
+# email: your-email@domain.com
+description: >  # this means to ignore newlines until "baseurl:"
+  Thunder is a lightning fast responsive theme based on default Jekyll theme. It is minimal and free from JavaScript. It has a css file of size 5kb. 
+url: "https://lyxw.github.io"  # the base hostname & protocol for your site
+
+baseurl: '/thunder'
 permalink: /:year-:month-:day/:title/
 
-highlighter: pygments #rouge
+analytics: UA-83979019-1
+#disqus-shortname: webjeda-demo
+
+# Color schemes
+color-1: '#3B97D3'
+color-2: '#26B99A'
+
+# Author pictre 100x100 --> keep it inside img folder.
+author-image: 'author.jpg'
+author-name: 'lyxw' 
+author-about: 'Hello,I'm lyxw.This is my blog,believe it or not.' 
+
+# Build settings
 markdown: kramdown
-kramdown:
-  input:  GFM
-#  syntax_highlighter: rouge
 
-
-paginate: 10
-paginate_path: ":num"
-baseurl: ""
-
-
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post
-      styles : [highlight.css,post.css]
-      scripts : [post.js]
-
-
-
-title: "lyxw blog"
-# email: "sincerebravefight@gmail.com"
-description: "Hello,I'm lyxw.This is my blog,believe it or not."
-github_username:  "lyxw"
-swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
-# disqus_shortname: "rainyalley"
+sass:
+    style: compressed
 
 
 
 
-url: "https://lyxw.github.io"
-imgrepo: "https://lyxw.github.io/static/img"
-
-
-#url: "http://127.0.0.1:4000"
-#imgrepo: "http://127.0.0.1:4000/static/img"
-
+#compress.html
+compress_html:
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
+  ignore:
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+  
+  
+prose:
+  rooturl: ''
+  siteurl: 'https://lyxw.github.io/starter/'
+  relativeLinks: 'https://lyxw.github.io/starter/links.jsonp'
+  media: 'images'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+    
+gems: [jekyll-seo-tag]

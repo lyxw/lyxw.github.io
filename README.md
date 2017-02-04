@@ -1,34 +1,67 @@
-##[点我查看中文说明](https://github.com/dubuyuye/blog/blob/gh-pages/README_zh_CN.md)
+# Features
 
-# Blog Address
+## Customizable theme
+The theme can be customized just by changing few variables in **_config.yml** file.
 
-<http://blog.rainyalley.com/>
+## Light-weight
+Since the theme is based on default Jekyll theme, it is very light-weight. No JavaScript except analytics is used!
+![jekyll theme thunder speed test](/images/webpagetest-jekyll-theme-thunder.jpg)
 
 
-# Must Modify
+# Installation
+Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is important because ``gh-pages`` branch is used here only to host the blog. You should be using the master branch as the source and create a fresh ``gh-pages`` branch.
 
-## 1.swiftype
+## How to delete old **gh-pages** branch?
+After forking the repository, click on **branches**.
 
-This service provides the on-site search function.
 
-Service address： <https://swiftype.com/>.
+![delete gh-pages branch](/images/delete-github-branch.png)
 
-After the setup is complete， you need to modify the `swiftype_searchId` in `_config.yml`.
+Delete ``gh-pages`` branch.
+![delete gh-pages branch](/images/delete-github-branch-2.png)
 
-In your swiftype engine, go to `Setup and integration` -> `Install Search`, you could find the `swiftype_searchId`.
+You have to create a new ``gh-pages`` branch using the master branch. Go back to the forked repository and create ``gh-pages`` branch.
 
-```html
-<script type="text/javascript">
-...
-...
-  _st('install','swiftype_searchId','2.0.0');
-</script>
-```
+![create gh-pages branch](/images/create-gh-pages-branch.JPG)
 
-## 2.disqus
+Now, go to settings and check the **Github Pages** section. You should see a URL where the blog is hosted.
 
-This service provides the comment function.
+This process will host the theme as a **Project Page**. You can also download the files for local development. 
 
-Service address： <https://disqus.com/>.
+Default theme will look like this
 
-After the setup is complete， you need to modify the `disqus_shortname` in `_config.yml`.
+![webjeda thunder jekyll theme](/images/thunder-jekyll-theme.jpg)
+
+This theme is responsive.
+
+![webjeda thunder jekyll responsive theme](/images/thunder-responsive-jekyll-theme.jpg)
+
+
+# Customization
+
+## Theme
+The theme provides a nice header that can be customized by changing colors in the **_config.yml** file.
+
+<pre>
+
+#color scheme
+color-1: '#E64C3C'
+color-2: '#F0C419' 
+
+</pre>
+
+![webjeda sidebar theme](/images/thunder-jekyll-theme-2.jpg)
+
+Remember, while developing locally, every change you make in **_config.yml** is applied only if you restart ``jekyll serve`` process.
+
+## Font 
+The default font is Helvetica. Text shadow is used to give it a little deapth.
+
+## Logo
+The **webjeda thunder** logo is an SVG file. This can be removed and text can be used as the logo. Make these changes in the **header** file. But I suggest to use an SVG or an image.
+
+# Development
+Make changes to the **master** branch and create a pull request. Do not use **gh-pages** branch as it is used to host the theme.
+
+# License
+MIT License
