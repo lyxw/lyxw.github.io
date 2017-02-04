@@ -1,13 +1,21 @@
 ---
-title: About Hagura
-layout: post
+layout: page
+title: About
 permalink: /about/
-published: true
 ---
+<div class="mt50"></div>
 
-For more themes please visit [https://blog.webjeda.com](https://blog.webjeda.com)
+Webjeda Gatok is a Bootstrap based theme. Any Bootstrap element can be used in the theme.
 
-Does the theme deserve a star?
+The name Gatok is a short form of [Ghatotkacha](https://en.wikipedia.org/wiki/Ghatotkacha){: target="_blank"} who was a monster in the Hindu mythology Mahabharatha.
 
-<a class="github-button" href="https://github.com/sharu725/hagura" data-style="mega" data-count-href="/sharu725/hagura/stargazers" data-count-api="/repos/sharu725/hagura#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sharu725/hagura on GitHub">Star</a>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+![Gatok Jekyll Theme]({{site.baseurl}}/images/gatok.jpg)
+
+He is someone you shouldn't be messing with!
+![Gatok Jekyll Theme]({{site.baseurl}}/images/gatok-2.jpg)
+
+
+[**Watch his story**](https://www.youtube.com/watch?v=6gYv6S1dCqs){: target="_blank"}
+
+
+Read [Webjeda Blog](http://blog.webjeda.com){: target="_blank"} for jekyll tutorials. 

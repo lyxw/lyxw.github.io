@@ -1,13 +1,6 @@
-# Webjeda Hagura Theme
+# Webjeda Gatok Theme
 
-[**Demo**](http://webjeda.com/hagura)
-
-Hagura is a theme made for blogs with long text paragraphs. Made to be easy on eyes as well with a switchable theme.
-
-Suitable fonts are selected for better readability. Since the theme is created for smartphone reading, the theme is very light and it loads instantly even on a slow data connection.
-
-The theme comes with pre-installed analytics, disqus and html compressor. But make sure you change key parameters in the _config.yml file.
-
+[**Demo**](http://webjeda.com/gatok)
 
 # Installation: 
 Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is important because ``gh-pages`` branch is used here only to host the blog. You should be using the master branch as the source and create a fresh ``gh-pages`` branch.
@@ -33,12 +26,16 @@ This process will host the theme as a **Project Page**. You can also download th
 
 Default theme will look like this
 
-![webjeda gatok jekyll theme](http://webjeda.com/hagura/images/hagura-1.png)
+![webjeda gatok jekyll theme](/images/webjeda-gatok-jekyll-theme-screenshot-1.png)
+
+Hover on the left side for a 3d sidebar!
+
+![webjeda gatok jekyll theme sidebar](/images/webjeda-gatok-jekyll-theme-screenshot.jpg)
 
 
 This theme is responsive.
 
-![webjeda gatok responsive jekyll theme](http://webjeda.com/hagura/images/hagura-responsive.png)
+![webjeda gatok responsive jekyll theme](/images/webjeda-gatok-jekyll-theme-screenshot-2.png)
 
 
 

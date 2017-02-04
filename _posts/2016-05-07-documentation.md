@@ -1,26 +1,15 @@
 ---
 layout: post
 title: Documentation
+img: image-5.png
 ---
 
-* Do not remove this line (it will not be displayed) 
-{:toc}
-
-# Features:
-Hagura is a theme made for blogs with long text paragraphs. Made to be easy on eyes as well. 
-
-Suitable fonts are selected for better readability. Since the theme is created for smartphone reading, the theme is very light so that it loads instantly on a slow data connection.
-
-The theme comes with pre-installed **analytics**, **disqus** and **html compressor**. But make sure you change key parameters in the **_config.yml** file.
-
-## Switch Night-Mode
-The best part is the night-mode that comes with this theme. Once you click on night-mode, the website remebers it untill you close or toggle!
 
 # Installation: 
 Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is important because ``gh-pages`` branch is used here only to host the blog. You should be using the master branch as the source and create a fresh ``gh-pages`` branch.
 
 Watch my video on instlallation
-<iframe class="video" src="https://www.youtube.com/embed/T2nx6tj-ZH4?rel=0?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="360" src="https://www.youtube.com/embed/T2nx6tj-ZH4?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## How to delete old **gh-pages** branch?
 After forking the repository, click on **branches**.
@@ -38,23 +27,34 @@ Now, go to settings and check the **Github Pages** section. You should see a URL
 
 This process will host the theme as a **Project Page**. You can also download the files for local development. 
 
-The default theme will look like this
+Default theme will look like this
 
-![webjeda hagura jekyll theme]({{site.baseurl}}/images/hagura-1.png)
+![webjeda gatok jekyll theme]({{site.baseurl}}/images/webjeda-gatok-jekyll-theme-screenshot-1.png)
+
+Hover on the left side for a 3d sidebar!
+
+![webjeda gatok jekyll theme sidebar]({{site.baseurl}}/images/webjeda-gatok-jekyll-theme-screenshot.jpg)
 
 
-This theme is responsive as well.
+This theme is responsive.
 
-![webjeda hagura responsive jekyll theme]({{site.baseurl}}/images/hagura-responsive.png)
-{: style="text-align:center"}
+![webjeda gatok responsive jekyll theme]({{site.baseurl}}/images/webjeda-gatok-jekyll-theme-screenshot-2.png)
+{: .text-center}
+
 
 # Development
 Make changes to the **master** branch and create a pull request. Do not use **gh-pages** branch as it is used to host the theme.
+
 
 # License
 MIT License
 
 # Change Log
 
+### Version 1.0
+* Fixed flashing menubar. 
+* SEO optimization. Disqus is installed by default. 
+* Compression is removed. Add ```layout: compress``` to the front matter of default layout to compress html.
+
 ### Version 0.8
-* Initial release with a reader-friendly layout.
+* Initial release with 3D menu and minimal layout.
