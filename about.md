@@ -1,11 +1,13 @@
 ---
-layout: page
-title: About
+title: About Hagura
+layout: post
 permalink: /about/
+published: true
 ---
 
-This is a simple Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/).  Plus, you can find a lot of themes at [jekyllthemes.org](http://jekyllthemes.org/)
+For more themes please visit [https://blog.webjeda.com](https://blog.webjeda.com)
 
-You can find the source code for this theme at: <data data-icon="ei-sc-github"></data>  [jekyll-simple](https://github.com/wild-flame/jekyll-simple)
+Does the theme deserve a star?
 
-You can find the source code for Jekyll at <data data-icon="ei-sc-github"></data>  [jekyll](https://github.com/jekyll/jekyll)
+<a class="github-button" href="https://github.com/sharu725/hagura" data-style="mega" data-count-href="/sharu725/hagura/stargazers" data-count-api="/repos/sharu725/hagura#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sharu725/hagura on GitHub">Star</a>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
