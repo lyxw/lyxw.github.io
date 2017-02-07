@@ -151,8 +151,8 @@ Dalvik指令集中有一条指令用来抛出异常。
 | goto +AA | 无条件跳转到指定偏移处，偏移量AA不能为0 |
 | goto/16 +AAAA | 无条件跳转到指定偏移处，偏量AAAA不能为0 |
 | goto/32 +AAAAAAAA | 无条件跳转到指定偏移处 |
-| packed-switch vAA, +BBBBBBBB | 分支跳转指令。<br>vAA寄存器为switch分支中需要判断的值，BBBBBBBB指向一个packed-switch-payload格式的偏移表，表中的值是有规律递增的 |
-| sparse-switch vAA, +BBBBBBBB | 分支跳转指令。<br>vAA寄存器为switch分支中需要判断的值，BBBBBBBB指向一个sparse-switch-payload格式的偏移表，表中的值是无规律的偏移量 |
+| packed-switch vAA, +BBBBBBBB | 分支跳转指令。<br>vAA寄存器为switch分支中需要判断的值，<br>BBBBBBBB指向一个packed-switch-payload格式的偏移表，表中的值是有规律递增的 |
+| sparse-switch vAA, +BBBBBBBB | 分支跳转指令。<br>vAA寄存器为switch分支中需要判断的值，<br>BBBBBBBB指向一个sparse-switch-payload格式的偏移表，表中的值是无规律的偏移量 |
 | if-test vA, vB, +CCCC | 条件跳转指令。<br>比较vA寄存器与vB寄存器的值，如果比较结果满足就跳转到CCCC指定的偏移处。偏移量CCCC不能为0 |
 | if-testz vAA, +BBBB | 条件跳转指令。<br>拿vAA寄存器与0比较，如果比较结果满足或值为0时就跳转到BBBB指定的偏移处。偏移量BBBB不能为0 |
 
