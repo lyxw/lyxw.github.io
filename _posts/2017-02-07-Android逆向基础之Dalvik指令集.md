@@ -129,7 +129,8 @@ Dalvik指令集中大多数指令用到了寄存器作为目的操作数或源�
 | fill-array-data vAA, +BBBBBBBB | 用指定的数据来填充数组，vAA寄存器为数组引用，引用必须为基础类型的数组，在指令后面会紧跟一个数据表 |
 | new-array/jumbo vAAAA, vBBBB,type@CCCCCCCC | 指令功能与`new-array vA,vB,type@CCCC`相同，只是寄存器值与指令的索引取值范围更大（Android4.0中新增的指令） |
 | filled-new-array/jumbo {vCCCC  ..vNNNN},type@BBBBBBBB | 指令功能与`filled-new-array/range {vCCCC  ..vNNNN},type@BBBB`相同，只是索引取值范围更大（Android4.0中新增的指令） |
-| arrayop vAA, vBB, vCC | 对vBB寄存器指定的数组元素进入取值与赋值。vCC寄存器指定数组元素索引，vAA寄存器用来存放读取的或需要设置的数组元素的值。读取元素使用aget类指令，元素赋值使用aput类指定，根据数组中存储的类型指令后面会紧跟不同的指令后缀，指令列表有`aget, aget-wide, aget-object, aget-boolean, aget-byte,aget-char, aget-short, aput, aput-wide, aput-object, aput-boolean, aput-byte, aput-char, aput-short` |
+| arrayop vAA, vBB, vCC | 对vBB寄存器指定的数组元素进入取值与赋值。vCC寄存器指定数组元素索引，vAA寄存器用来存放读取的或需要设置的数组元素的值。
+读取元素使用aget类指令，元素赋值使用aput类指定，根据数组中存储的类型指令后面会紧跟不同的指令后缀，指令列表有`aget, aget-wide, aget-object, aget-boolean, aget-byte,aget-char, aget-short, aput, aput-wide, aput-object, aput-boolean, aput-byte, aput-char, aput-short` |
 
 # 9. 异常指令
 
