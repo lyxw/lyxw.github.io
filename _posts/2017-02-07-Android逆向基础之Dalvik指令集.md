@@ -36,7 +36,7 @@ Dalvik指令集中大多数指令用到了寄存器作为目的操作数或源�
 - `AA/BB/CC/DD/EE/FF/GG/HH`代表一个8位的数值，可用来表示0~255的数值或v0~v255的寄存器；
 - `AAAA/BBBB/CCCC/DDDD/EEEE/FFFF/GGGG/HHHH`代表一个16位的数值，可用来表示0～65535的数值或v0~v65535的寄存器。
 
-#### 注意：
+**注意：**
 - Android官方指令文档描述寄存器时，对不同取值范围的寄存器以括号说明其大小，如A:destination register(4 bits)，A:destination register(16 bits)。
 - Dalvik虚拟机中的每个寄存器都是32位的，描述指令时所说的位数表示的是寄存器数值的取值范围。
 
