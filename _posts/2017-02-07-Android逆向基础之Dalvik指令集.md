@@ -10,7 +10,6 @@ description:
 ---
 
 
-
 Dalvik是Google公司自己设计的用于Android平台的虚拟机。Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核心组成部分之一。它可以支持已转换为 .dex（即Dalvik Executable）格式的Java应用程序的运行，.dex格式是专为Dalvik设计的一种压缩格式，适合内存和处理器速度有限的系统。Dalvik 经过优化，允许在有限的内存中同时运行多个虚拟机的实例，并且每一个Dalvik 应用作为一个独立的Linux 进程执行。独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。
 
 # 1. 指令特点
@@ -92,7 +91,7 @@ Dalvik指令集中大多数指令用到了寄存器作为目的操作数或源�
 | const-string vAA, string@BBBB | 通过字符串索引构造一个字符串并赋给寄存器vAA |
 | const-string/jumbo vAA, string@BBBBBBBB | 通过字符串索引（较大）构造一个字符串并赋给寄存器vAA |
 | const-class vAA, type@BBBB | 通过类型索引获取一个类引用并赋给寄存器vAA |
-| const-class/jumbo vAAAA, type@BBBBBBBB | 通过给定的类型索引获取一个类引用并赋给寄存器vAAAA。这条指令占用两个字节，值为0xooff（Android4.0中新增的指令） |
+| const-class/jumbo vAAAA, type@BBBBBBBB | 通过给定的类型索引获取一个类引用并赋给寄存器vAAAA。<br>这条指令占用两个字节，值为0xooff（Android4.0中新增的指令） |
 
 # 6. 锁指令 
 
@@ -109,7 +108,7 @@ Dalvik指令集中大多数指令用到了寄存器作为目的操作数或源�
 
 | 指令              | 说明               |
 | :---------------- | :----------------- |
-| check-cast vAA, type@BBBB | 将vAA寄存器中的对象引用转换成指定的类型，如果失败会抛出ClassCastException异常。如果类型B指定的是基本类型，对于非基本类型的A来说，运行时始终会失败 |
+| check-cast vAA, type@BBBB | 将vAA寄存器中的对象引用转换成指定的类型，如果失败会抛出ClassCastException异常。<br>如果类型B指定的是基本类型，对于非基本类型的A来说，运行时始终会失败 |
 | instance-of vA, vB, type@CCCC | 判断vB寄存器中的对象引用是否可以转换成指定的类型，如果可以vA寄存器赋值为1，否则vA寄存器赋值为0 |
 | new-instance vAA, type@BBBB | 构造一个指定类型对象的新实例，并将对象引用赋值给vAA寄存器，类型符type指定的类型不能是数组类 |
 | check-cast/jumbo vAAAA, type@BBBBBBBB | 指令功能与`check-cast vAA, type@BBBB`相同，只是寄存器值与指令的索引取值范围更大（Android4.0中新增的指令） |
@@ -124,12 +123,12 @@ Dalvik指令集中大多数指令用到了寄存器作为目的操作数或源�
 | :---------------- | :----------------- |
 | array-length vA, vB | 获取给定vB寄存器中数组的长度并将值赋给vA寄存器，数组长度指的是数组的条目个数 |
 | new-array vA, vB, type@CCCC | 构造指定类型（type@CCCC）与大小（vB）的数组，并将值赋给vA寄存器 |
-| filled-new-array {vC, vD, vE, vF, vG},type@BBBB | 构造指定类型（type@BBBB）与大小（vA）的数组并填充数组内容。vA寄存器是隐含使用的，除了指定数组的大小外还指定了参数的个数，vC~vG是使用到的参数寄存序列 |
+| filled-new-array {vC, vD, vE, vF, vG},type@BBBB | 构造指定类型（type@BBBB）与大小（vA）的数组并填充数组内容。<br>vA寄存器是隐含使用的，除了指定数组的大小外还指定了参数的个数，vC~vG是使用到的参数寄存序列 |
 | filled-new-array/range {vCCCC  ..vNNNN}, type@BBBB | 指令功能与`filled-new-array {vC, vD, vE, vF, vG},type@BBBB`相同，只是参数寄存器使用range字节码后缀指定了取值范围 ，vC是第一个参数寄存器，N = A +C -1 |
 | fill-array-data vAA, +BBBBBBBB | 用指定的数据来填充数组，vAA寄存器为数组引用，引用必须为基础类型的数组，在指令后面会紧跟一个数据表 |
 | new-array/jumbo vAAAA, vBBBB,type@CCCCCCCC | 指令功能与`new-array vA,vB,type@CCCC`相同，只是寄存器值与指令的索引取值范围更大（Android4.0中新增的指令） |
 | filled-new-array/jumbo {vCCCC  ..vNNNN},type@BBBBBBBB | 指令功能与`filled-new-array/range {vCCCC  ..vNNNN},type@BBBB`相同，只是索引取值范围更大（Android4.0中新增的指令） |
-| arrayop vAA, vBB, vCC | 对vBB寄存器指定的数组元素进入取值与赋值。vCC寄存器指定数组元素索引，vAA寄存器用来存放读取的或需要设置的数组元素的值 |
+| arrayop vAA, vBB, vCC | 对vBB寄存器指定的数组元素进入取值与赋值。<br>vCC寄存器指定数组元素索引，vAA寄存器用来存放读取的或需要设置的数组元素的值 |
 
 读取元素使用aget类指令，元素赋值使用aput类指定，根据数组中存储的类型指令后面会紧跟不同的指令后缀，指令列表如下：
 ```
@@ -152,10 +151,10 @@ Dalvik指令集中有一条指令用来抛出异常。
 | goto +AA | 无条件跳转到指定偏移处，偏移量AA不能为0 |
 | goto/16 +AAAA | 无条件跳转到指定偏移处，偏量AAAA不能为0 |
 | goto/32 +AAAAAAAA | 无条件跳转到指定偏移处 |
-| packed-switch vAA, +BBBBBBBB | 分支跳转指令。vAA寄存器为switch分支中需要判断的值，BBBBBBBB指向一个packed-switch-payload格式的偏移表，表中的值是有规律递增的 |
-| sparse-switch vAA, +BBBBBBBB | 分支跳转指令。vAA寄存器为switch分支中需要判断的值，BBBBBBBB指向一个sparse-switch-payload格式的偏移表，表中的值是无规律的偏移量 |
-| if-test vA, vB, +CCCC | 条件跳转指令。比较vA寄存器与vB寄存器的值，如果比较结果满足就跳转到CCCC指定的偏移处。偏移量CCCC不能为0 |
-| if-testz vAA, +BBBB | 条件跳转指令。拿vAA寄存器与0比较，如果比较结果满足或值为0时就跳转到BBBB指定的偏移处。偏移量BBBB不能为0 |
+| packed-switch vAA, +BBBBBBBB | 分支跳转指令。<br>vAA寄存器为switch分支中需要判断的值，BBBBBBBB指向一个packed-switch-payload格式的偏移表，表中的值是有规律递增的 |
+| sparse-switch vAA, +BBBBBBBB | 分支跳转指令。<br>vAA寄存器为switch分支中需要判断的值，BBBBBBBB指向一个sparse-switch-payload格式的偏移表，表中的值是无规律的偏移量 |
+| if-test vA, vB, +CCCC | 条件跳转指令。<br>比较vA寄存器与vB寄存器的值，如果比较结果满足就跳转到CCCC指定的偏移处。偏移量CCCC不能为0 |
+| if-testz vAA, +BBBB | 条件跳转指令。<br>拿vAA寄存器与0比较，如果比较结果满足或值为0时就跳转到BBBB指定的偏移处。偏移量BBBB不能为0 |
 
 if-test类型的指令有以下几条：
 
@@ -185,11 +184,11 @@ if-testz类型的指令有以下几条：
 
 | 指令        | 说明               |
 | :---------- | :----------------- |
-| cmpl-float  | 比较两个单精度浮点数。如果vBB寄存器大于vCC寄存器，结果为-1，相等则结果为0，小于的话结果为1 |
-| cmpg-float  | 比较两个单精度浮点数。如果vBB寄存器大于vCC寄存器，则结果为1，相等则结果为0，小于的话结果为-1 |
-| cmpl-double | 比较两个双精度浮点数。如果vBB寄存器对大于vCC寄存器对，则结果为-1，相等则结果为0，小于则结果为1 |
-| cmpg-double | 比较两个双精度浮点数。如果vBB寄存器对大于vCC寄存器对，则结果为1，相等则结果为0，小于的话，则结果为-1 |
-| cmp-long    | 比较两个长整型数。如果vBB寄存器大于vCC寄存器，则结果为1，相等则结果为0，小则结果为-1 |
+| cmpl-float  | 比较两个单精度浮点数。<br>如果vBB寄存器大于vCC寄存器，结果为-1，相等则结果为0，小于的话结果为1 |
+| cmpg-float  | 比较两个单精度浮点数。<br>如果vBB寄存器大于vCC寄存器，则结果为1，相等则结果为0，小于的话结果为-1 |
+| cmpl-double | 比较两个双精度浮点数。<br>如果vBB寄存器对大于vCC寄存器对，则结果为-1，相等则结果为0，小于则结果为1 |
+| cmpg-double | 比较两个双精度浮点数。<br>如果vBB寄存器对大于vCC寄存器对，则结果为1，相等则结果为0，小于的话，则结果为-1 |
+| cmp-long    | 比较两个长整型数。<br>如果vBB寄存器大于vCC寄存器，则结果为1，相等则结果为0，小则结果为-1 |
 
 # 12. 字段操作指令
 
