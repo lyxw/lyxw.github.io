@@ -19,7 +19,7 @@ github_username:  lyxw
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
-permalink: /archivers/:title/:categories/:year/:month/:day
+permalink: /archivers/:title/:categories/:month/:day/:year
 gems:
  - jekyll-paginate
  - jekyll-gist
