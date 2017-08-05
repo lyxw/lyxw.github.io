@@ -25,11 +25,6 @@ Read [Welcome to Jekyll and EasyBook][helloPost] and [Jekyll][jekyll] for furthe
  - **Google it**
  - [**Submit an issue**](https://github.com/laobubu/jekyll-theme-EasyBook/issues/new)
 
-## Donate
-
-Buy me a coffee if you find EasyBook useful for you :smiley:
-
-Visit <http://laobubu.net/donate.html>
 
 ## Demo
 
