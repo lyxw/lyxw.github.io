@@ -7,7 +7,7 @@ description: >
   The quiter you become, the more you can hear.
 
 # Your information
-email: your_email@example.com
+#email: your_email@example.com
 author: lyxw
 avatar: "/images/author.jpg"
 profile: The quiter you become, the more you can hear.
@@ -18,6 +18,38 @@ github_username:  lyxw
 #  choose one and un-comment the line to active it
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
+
+menu:
+  Home: /
+  Archives: /archives
+  Categories: /categories
+  Tags: /tags
+  About: /about
+## you can create `tags` and `categories` folders (I had created them already).
+## And create a `index.md` file in each of them.
+## set `front-matter`as
+## layout: tags (or categories)
+## title: tags (or categories)
+## ---
+
+#### Widgets
+widgets: 
+- category
+- tag
+- tagcloud
+- links
+- douban
+- github-card
+- rss
+## provide seven widgets:github-card,category,tag,rss,archive,tagcloud,links,weibo,douban
+links:
+  码农圈: https://coderq.com
+  Jark's Blog: http://wuchong.me
+
+
+
+
+
 
 permalink: /archivers/:title/:categories/:month/:day/:year
 gems:

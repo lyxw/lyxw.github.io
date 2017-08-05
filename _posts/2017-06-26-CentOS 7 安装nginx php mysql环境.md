@@ -3,7 +3,7 @@ layout: post
 title:  "CentOS 7 安装nginx+php+mysql环境"
 date:   2017-06-26 15:32:20
 categories: centos php nginx mysql
-permalink: /archivers/CentOS 7 安装nginx+php+mysql环境/year/month/day/
+permalink: /archivers/CentOS 7 安装nginx+php+mysql环境
 ---
 
 ## 安装php
