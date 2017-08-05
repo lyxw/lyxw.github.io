@@ -4,13 +4,13 @@ url: "http://lyxw.github.io"    # the protocol and hostname of your site
 baseurl: "/" # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
 #timezone: Asia/Chongqing
 description: >
-  One or more sentences introducing this blog.
+  The quiter you become, the more you can hear.
 
 # Your information
 email: your_email@example.com
 author: lyxw
 avatar: "/images/author.jpg"
-profile: One sentence introducing yourself.
+profile: The quiter you become, the more you can hear.
 twitter_username: kylin
 github_username:  lyxw
 
@@ -19,7 +19,7 @@ github_username:  lyxw
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
-permalink: /archivers/:title
+permalink: /archivers/:title/:categories/:year/:month/:day
 gems:
  - jekyll-paginate
  - jekyll-gist
