@@ -9,10 +9,10 @@ description: >
 # Your information
 email: your_email@example.com
 author: lyxw
-avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
+avatar: "/images/author.jpg"
 profile: One sentence introducing yourself.
-#twitter_username: twitter_username
-#github_username:  github_username
+twitter_username: kylin
+github_username:  lyxw
 
 # Comment Service (Disqus or 多说)
 #  choose one and un-comment the line to active it
