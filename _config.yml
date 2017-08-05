@@ -19,38 +19,6 @@ github_username:  lyxw
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
-menu:
-  Home: /
-  Archives: /archives
-  Categories: /categories
-  Tags: /tags
-  About: /about
-## you can create `tags` and `categories` folders (I had created them already).
-## And create a `index.md` file in each of them.
-## set `front-matter`as
-## layout: tags (or categories)
-## title: tags (or categories)
-## ---
-
-#### Widgets
-widgets: 
-- category
-- tag
-- tagcloud
-- links
-- douban
-- github-card
-- rss
-## provide seven widgets:github-card,category,tag,rss,archive,tagcloud,links,weibo,douban
-links:
-  码农圈: https://coderq.com
-  Jark's Blog: http://wuchong.me
-
-
-
-
-
-
 permalink: /archivers/:title/:categories/:month/:day/:year
 gems:
  - jekyll-paginate
