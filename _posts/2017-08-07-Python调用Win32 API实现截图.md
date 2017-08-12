@@ -1,5 +1,3 @@
-# Python调用Win32 API实现截图
-
 ---
 layout: post
 title:  "Python调用Win32 API实现截图"
