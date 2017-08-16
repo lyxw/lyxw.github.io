@@ -16,6 +16,7 @@ layout: default
 		文章中文字数：{{ page.content | strip_html | strip_newlines | remove: " " | size }}&nbsp;&nbsp;&nbsp;&nbsp;
 		预计阅读时间：{{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }}&nbsp;分钟 
 	</p>
+		<span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span>次</span>
   </header>
 
   <article class="post-content">
