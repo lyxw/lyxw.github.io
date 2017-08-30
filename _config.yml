@@ -16,7 +16,7 @@ github_username:  lyxw
 
 # Comment Service (Disqus or 多说)
 #  choose one and un-comment the line to active it
-#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
+disqus_shortname: lyxw   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
 
 permalink: /archivers/:title/:categories/:month/:day/:year
