@@ -19,7 +19,7 @@ wxgzh_username:  Sec-redClub.jpg
 #  choose one and un-comment the line to active it
 #disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
 #duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
-idcomments_acct: lyxw
+idcomments_acct: f0a7bf6974944a38926567763cc03594
 
 permalink: /archivers/:title/:categories/:month/:day/:year
 gems:
