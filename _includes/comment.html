@@ -1,4 +1,13 @@
 {% if page.nocomments %}
+<div class="post-comments">
+	<script>
+		var idcomments_acct = 'f0a7bf6974944a38926567763cc03594';
+		var idcomments_post_id;
+		var idcomments_post_url;
+	</script>
+	<span id="IDCommentsPostTitle" style="display:none"></span>
+	<script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+</div>
 {% else %}
 {% if site.disqus_shortname %}
 <div class="post-comments">
@@ -35,4 +44,5 @@
     <!-- 多说公共JS代码 end -->
 </div>
 {% endif %}
+
 {% endif %}
