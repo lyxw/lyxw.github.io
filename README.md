@@ -47,7 +47,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ```
 如需转载文章请联系
-![](/images/Sec-redClub.jpg)
+![](https://lyxw.github.io/images/Sec-redClub.jpg)
 ```
 
 [Quick Guide]: https://github.com/laobubu/jekyll-theme-EasyBook/wiki/Quick-Guide
