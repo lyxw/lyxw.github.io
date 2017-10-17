@@ -218,4 +218,4 @@ Lpackage/name/ObjectName;->FieldName:Ljava/lang/String;
 
 字段由类型（`Lpackage/name/ObjectName;`）、字段名（`FieldName`）与字段类型（`Ljava/lang/String;`）组成，字段名与字段类型中间用冒号“`:`”隔开。
 
-BakSmali生成的字段代码以.field指令开始。“`# instance fields`” 表示这是一个实例字段，“`# static fields`” 表示这是个静态字段。
+BakSmali生成的字段代码以`.field`指令开始。“`# instance fields`” 表示这是一个实例字段，“`# static fields`” 表示这是个静态字段。
