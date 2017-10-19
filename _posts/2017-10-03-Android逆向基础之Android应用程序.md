@@ -6,11 +6,11 @@ categories: Android apk
 permalink: /archivers/Android逆向基础之Android应用程序
 ---
 
-### APK简介
+### 0x01 APK简介
 
 **APK**是Android Package的缩写，即Android安装包(apk)。Google为程序员提供了Android SDK来开发Android平台的软件，每个软件在最终发布时会打包成一个APK文件，将APK文件传送到Android设备中运行即可完成安装。实际上APK文件就是一个zip压缩包。
 
-### 打包APK
+### 0x02 打包APK
 
 Android工程的打包方式有两种：
 
@@ -53,7 +53,7 @@ Android工程的打包方式有两种：
 
 ![](https://lyxw.github.io/images/android/APK_build.jpg)
 
-### APK安装
+### 0x03 APK安装
 
 Android应用程序安装方式主要有以下4种：
 
@@ -70,7 +70,7 @@ Android应用程序安装方式主要有以下4种：
 >* 直接通过Android市场下载APK文件进行安装，集成Google Play商店的安装没有安装界面。
 >* 国内手机大多使用其他Android市场来安装apk程序，此类安装跟手机自带安装类似。
 
-### APK安装流程
+### 0x04 APK安装流程
 
 Android系统接到请求需要安装apk程序时，会启动**PackageInstaller**的*PackageInstallerActivity*，并接收**Intent**传递过来的apk文件信息，*PackageInstallerActivity*启动时会首先初始化一个*PackageManager*与*PackageParser.Package*对象，接着调用***PackageUtil***类的静态方法`getPackageInfo()`解析程序包的信息，如果这一步解析出错，程序就会失败返回，如果成功就调用`setContentView()`方法设置*PackageInstallerActivity*的显示视图，接着调用***PackageUtil***类的静态方法`getAppSnippet()`与`initSnippetForNewApp()`来设置*PackageInstallerActivity*的控件显示程序的名称与图标，最后调用`initiateInstall()`方法进行一些其他的初始化工作。
 
