@@ -119,12 +119,12 @@ access_log  logs/access.log  main;
 重新载入nginx的配置文件
 
 ```
-/usr/loca/nginx/sbin/nginx -s reload
+/usr/local/openresty/nginx/sbin/nginx -s reload
 ```
 
 #### 5、测试php文件
 
-在`/usr/local/nginx/html`下创建index.php文件，输入如下内容
+在`/usr/local/openresty/nginx/html`下创建index.php文件，输入如下内容
 
 ```php
 <?php
