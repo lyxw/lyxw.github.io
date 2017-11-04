@@ -106,14 +106,14 @@ access_log  logs/access.log  main;
         index  index.html index.htm;
     }
 
-	location ~ \.php$ {
-    	root           html;
-    	fastcgi_pass   127.0.0.1:9000;
-    	fastcgi_index  index.php;
-    	#fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-		#include        fastcgi_params;
-		include        fastcgi.conf;
-	}
+    location ~ \.php$ {
+        root           html;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        #fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #include        fastcgi_params;
+        include        fastcgi.conf;
+    }
 ```
 
 重新载入nginx的配置文件
