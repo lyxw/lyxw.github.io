@@ -4,13 +4,13 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemap>
 	{% for post in site.posts limit:100 %}
-		<articles>
+		<article>
 			<name>{{ post.title | xml_escape }}</name>
 			<category>{% for category in post.categories %}{{ category | xml_escape }}&#160;{% endfor %}</category>
 			<lastmod>{{ post.date | date_to_rfc822 }}</lastmod>
 			<urlpath>{{ post.url | prepend: site.baseurl | prepend: site.url }}</urlpath>
 			<changefreq>daily</changefreq>
 			<priority>0.8</priority>
-		</articles>
+		</article>
 	{% endfor %}
 </sitemap>
