@@ -11,7 +11,7 @@
 		{% if site.categories %}
 			{% for item in (0..site.categories.size) %}
 				{% unless forloop.last %}
-					{{ category[item] }}
+					{% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}
 				{% endunless %}
 			{% endfor %}
 		{% endif %}
