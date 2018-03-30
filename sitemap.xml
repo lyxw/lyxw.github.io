@@ -2,14 +2,15 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset>
+<sitemap>
 	{% for post in site.posts limit:100 %}
-		<url>
+		<articles>
 			<name>{{ post.title }}</name>
-			<loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+			<category>{{ post.categories }}</category>
 			<lastmod>{{ post.date | date_to_rfc822 }}</lastmod>
+			<urlpath>{{ post.url | prepend: site.baseurl | prepend: site.url }}</urlpath>
 			<changefreq>daily</changefreq>
 			<priority>0.8</priority>
-		</url>
+		</articles>
 	{% endfor %}
-</urlset>
+</sitemap>
