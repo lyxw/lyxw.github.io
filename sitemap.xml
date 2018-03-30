@@ -5,8 +5,8 @@ layout: null
 <sitemap>
 	{% for post in site.posts limit:100 %}
 		<articles>
-			<name>{{ post.title | strip_html }}</name>
-			<category>{% for cat in post.categories %}{{ cat | xml_escape }}{% endfor %}</category>
+			<name>{{ post.title | xml_escape }}</name>
+			<category>{% for cat in post.categories %}{{ cat | strip_html }}{% endfor %}</category>
 			<lastmod>{{ post.date | date_to_rfc822 }}</lastmod>
 			<urlpath>{{ post.url | prepend: site.baseurl | prepend: site.url }}</urlpath>
 			<changefreq>daily</changefreq>
