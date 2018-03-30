@@ -4,7 +4,8 @@ url: "http://lyxw.github.io"    # the protocol and hostname of your site
 baseurl: "/"    # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
 timezone: Asia/Chongqing
 description: >
-  The quiter you become, the more you can hear.
+  The quiter you become, the more you can hear. # Your description
+
 # Your information
 #email: your_email@example.com
 author: lyxw
