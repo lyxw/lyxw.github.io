@@ -7,9 +7,7 @@ public: true
 
 <div class="home">
 	<h1 class="page-heading">Category</h1>
-
 	<ul class="post-list">
-
 		{% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 		{% assign category = categories | split:',' | sort %}
 		{% for item in (0..site.categories.size) %}{% unless forloop.last %}
@@ -21,6 +19,5 @@ public: true
 			{% endif %}{% endfor %}
 		</ul>
 		{% endunless %}{% endfor %}
-
 	</ul>
 </div>
