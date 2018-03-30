@@ -5,7 +5,7 @@ layout: null
 <sitemap>
 	{% for post in site.posts limit:100 %}
 		<articles>
-			<name>{{ post.title }}</name>
+			<name>{{ post.title | xml_escape }}</name>
 			<category>{{ post.categories }}</category>
 			<lastmod>{{ post.date | date_to_rfc822 }}</lastmod>
 			<urlpath>{{ post.url | prepend: site.baseurl | prepend: site.url }}</urlpath>
