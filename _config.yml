@@ -5,7 +5,6 @@ baseurl: "/"    # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or j
 timezone: Asia/Chongqing
 description: >
   The quiter you become, the more you can hear.
-
 # Your information
 #email: your_email@example.com
 author: lyxw
