@@ -8,8 +8,8 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 	<!--<meta name="keywords" content="漏洞分析,安全动态,Python,php,Android,机器学习,Docker"/>-->
 	<meta name="keywords" content="
-		{% if site.categories %}
-			{% for item in (0..site.categories.size) %}
+		{% if page.categories %}
+			{% for item in (0..page.categories.size) %}
 				{% unless forloop.last %}
 					{% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}
 				{% endunless %}
