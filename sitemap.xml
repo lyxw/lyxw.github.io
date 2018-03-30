@@ -6,7 +6,9 @@ layout: null
 	{% for post in site.posts limit:100 %}
 		<articles>
 			<name>{{ post.title | xml_escape }}</name>
-			<category>{{ post.categories }}</category>
+			{% for cat in post.categories %}
+			<category>{{ cat | xml_escape }}</category>
+			{% endfor %}
 			<lastmod>{{ post.date | date_to_rfc822 }}</lastmod>
 			<urlpath>{{ post.url | prepend: site.baseurl | prepend: site.url }}</urlpath>
 			<changefreq>daily</changefreq>
