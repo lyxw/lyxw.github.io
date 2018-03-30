@@ -12,6 +12,7 @@
 			{% for item in (0..site.categories.size) %}
 				{% unless forloop.last %}
 					{{ category[item] }}
+				{% endunless %}
 			{% endfor %}
 		{% endif %}
 	"/>
