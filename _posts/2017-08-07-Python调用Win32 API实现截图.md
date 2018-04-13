@@ -178,6 +178,6 @@ with open(filename, 'wb') as bmp_file:
 print 'file "{}" created from clipboard image'.format(filename)
 ```
 
-### 0x03 代码
+### 0x03 完整代码
 
-完整代码后续会放到github上。
+[https://github.com/lyxw/codes/blob/master/tools/PrintScreen.py](https://github.com/lyxw/codes/blob/master/tools/PrintScreen.py)
