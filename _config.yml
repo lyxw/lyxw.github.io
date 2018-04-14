@@ -15,10 +15,7 @@ profile: The quiter you become, the more you can hear.
 github_username:  lyxw
 wxgzh_username:  Sec-redClub.jpg
 
-# Comment Service (Disqus or 多说)
-#  choose one and un-comment the line to active it
-#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
-#duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
+# Comment Service
 idcomments_acct: f0a7bf6974944a38926567763cc03594
 
 permalink: /archivers/:title/:categories/:month/:day/:year
