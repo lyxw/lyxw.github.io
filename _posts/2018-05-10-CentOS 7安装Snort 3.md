@@ -38,7 +38,6 @@ yum install -y mlocate vim
 
 ```
 mkdir /snort_src
-cd /snort_src
 ```
 
 ### 5、安装 `pkg-config` 
@@ -52,6 +51,7 @@ yum install -y wget gcc-c++
 下载 `pkg-config` 源码，编译安装
 
 ```
+cd /snort_src
 wget http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.1.tar.gz -O pkg-config-0.29.1.tar.gz
 tar -zxvf pkg-config-0.29.1.tar.gz
 cd pkg-config-0.29.1
@@ -271,7 +271,7 @@ mv so_rules /usr/local/etc/snort/
 mv rules /usr/local/etc/snort/
 ```
 
-注意使用的配置文件是 `/usr/local/etc/snort/etc/` 文件夹中的，此处也缺少 `snort_config.lua` 文件，需要从 `/usr/local/include/snort/lua/` 中复制过去，同时需要添加 `app_detector_dir`
+注意使用的配置文件是 `/usr/local/etc/snort/etc/` 目录下的，此处也缺少 `snort_config.lua` 文件，需要从 `/usr/local/include/snort/lua/` 中复制过去，同时需要添加 `app_detector_dir`
 
 ```
 cp /usr/local/include/snort/lua/snort_config.lua /usr/local/etc/snort/etc/
@@ -297,8 +297,7 @@ appid = {
 -- uncomment below to set non-default configs
 alert_csv = {
     file = true,
-    --fields = { timestamp, msg, pkt_num, proto, pkt_gen, pkt_len, dir, src_ap, dst_ap, priority, proto, service, rev, rule, action },
-    fields = { action, class, b64_data, dir, dst_addr, dst_ap, dst_port, eth_dst, eth_len, eth_src, eth_type, gid, icmp_code, icmp_id, icmp_seq, icmp_type, iface, ip_id, ip_len, msg, mpls, pkt_gen, pkt_len, pkt_num, priority, proto, rev, rule, seconds, service, sid, src_addr, src_ap, src_port, target, tcp_ack, tcp_flags, tcp_len, tcp_seq, tcp_win, timestamp, tos, ttl, udp_len, vlan },
+    fields = { timestamp, pkt_num, proto, pkt_gen, pkt_len, dir, src_ap, dst_ap, rule, action },
     -- fields = timestamp pkt_num proto pkt_gen pkt_len dir src_ap dst_ap rule action: selected fields will be output in given order left to right { action | class | b64_data | dir | dst_addr | dst_ap | dst_port | eth_dst | eth_len | eth_src | eth_type | gid | icmp_code | icmp_id | icmp_seq | icmp_type | iface | ip_id | ip_len | msg | mpls | pkt_gen | pkt_len | pkt_num | priority | proto | rev | rule | seconds | service | sid | src_addr | src_ap | src_port | target | tcp_ack | tcp_flags | tcp_len | tcp_seq | tcp_win | timestamp | tos | ttl | udp_len | vlan }
     -- limit = 0: set maximum size in MB before rollover (0 is unlimited) { 0: }
     -- separator = ,: separate fields with this character sequence
@@ -371,7 +370,9 @@ unified2 = {
 snort -c /usr/local/etc/snort/etc/snort.lua --plugin-path /usr/local/lib/snort_extra -i ens33 -l /var/log/snort -A alert_json -k none
 ```
 
-### 19、至此，snort 3.0 安装完毕，以下为 snort 3.0 支持的参数信息列表
+### 19、参数信息列表
+
+至此，snort 3.0 安装完毕，以下为 snort 3.0 支持的参数信息列表
 
 ```
 -? <option prefix> output matching command line option quick help (same as --help-options) (optional)
