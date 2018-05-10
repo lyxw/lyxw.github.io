@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "CentOS 7安装Snort 3.0"
+title:  "CentOS 7安装Snort 3"
 date:   2018-05-10 12:37:20
 categories: CentOS Snort
-permalink: /archivers/CentOS 7安装Snort 3.0
+permalink: /archivers/CentOS 7安装Snort 3
 ---
 
 ### 1、安装 `epel-release`
