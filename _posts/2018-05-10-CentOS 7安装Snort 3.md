@@ -6,7 +6,7 @@ categories: CentOS Snort
 permalink: /archivers/CentOS 7安装Snort 3
 ---
 
-1、Snort 简介
+### 1、Snort 简介
 
 Snort 是免费 `Network Intrusion Prevention System(NIPS)` 及 `Network Intrusion Detection System (NIDS)` 软件，其具有对数据流量分析和对网络数据包进行协议分析处理的能力，通过灵活可定制的规则库(Rule)，可对处理的报文内容进行搜索和匹配，能够检测出各种攻击，并进行实时预警
 
@@ -42,7 +42,7 @@ Snort 3.0（Snort ++）是 Snort 的更新版本，以下是它一些关键特�
 
 * 支持 Windows
 
-### 1、安装 `epel-release`
+### 2、安装 `epel-release`
 
 首先安装 `epel-release`，后续安装 `luajit`、`luajit-devel`、`cmake3` 等软件包时会用到
 
@@ -50,7 +50,7 @@ Snort 3.0（Snort ++）是 Snort 的更新版本，以下是它一些关键特�
 yum install -y epel-release 
 ```
 
-### 2、更新包缓存
+### 3、更新包缓存
 
 更新包缓存以及更新系统，这一步非必需，看个人需求
 
@@ -60,7 +60,7 @@ yum makecache
 yum -y update
 ```
 
-### 3、非必需软件
+### 4、非必需软件
 
 其他不必要的工具，主要是方便后续配置，熟悉 `vi`、`find` 等命令的可略过
 
@@ -68,7 +68,7 @@ yum -y update
 yum install -y mlocate vim
 ```
 
-### 4、新建编译目录
+### 5、新建编译目录
 
 在根路径下创建 snort 编译目录，后续会将用到的源码下载到这里
 
@@ -76,7 +76,7 @@ yum install -y mlocate vim
 mkdir /snort_src
 ```
 
-### 5、安装 `pkg-config` 
+### 6、安装 `pkg-config` 
 
 安装编译 `pkg-config` 时需要用到的软件包
 
@@ -101,7 +101,7 @@ make
 make install
 ```
 
-### 6、添加必要的环境变量
+### 7、添加必要的环境变量
 
 使用 `export` 添加的仅本次生效
 
@@ -118,7 +118,7 @@ sh -c "echo 'export PKG_CONFIG_PATH=/usr/share/pkgconfig:/usr/lib64/pkgconfig' >
 source ~/.bashrc
 ```
 
-### 7、安装依赖包
+### 8、安装依赖包
 
 安装编译 Snort 用到的依赖包
 
@@ -126,7 +126,7 @@ source ~/.bashrc
 yum install -y libdnet libdnet-devel hwloc hwloc-devel luajit luajit-devel openssl openssl-devel libpcap libpcap-devel pcre pcre-devel flex bison cmake3 lzma xz-devel
 ```
 
-### 8、更新动态链接库
+### 9、更新动态链接库
 
 使动态链接库为系统所共享，安装新的动态链接库时，需要手工运行
 
@@ -147,7 +147,7 @@ sh -c "echo 'export LD_LIBRARY_PATH=/usr/local/lib' >> ~/.bashrc"
 source ~/.bashrc
 ```
 
-### 9、安装 `NFQ`
+### 10、安装 `NFQ`
 
 如果想使用 NFQ 以内联模式运行 Snort ，或者不确定是否要使用，应该安装这个软件包。在 IDS 模式或使用 afpacket 进行内联模式时不需要安装。
 
@@ -155,7 +155,7 @@ source ~/.bashrc
 yum install -y libnetfilter_queue libnetfilter_queue-devel
 ```
 
-### 10、编译安装 `daq`
+### 11、编译安装 `daq`
 
 ```
 cd /snort_src
@@ -167,7 +167,7 @@ make
 make install
 ```
 
-### 11、搜索动态链接库
+### 12、搜索动态链接库
 
 搜索一下动态链接库，方便后续编译
 
@@ -175,7 +175,7 @@ make install
 ldconfig -v
 ```
 
-### 12、编译安装 `snort`
+### 13、编译安装 `snort`
 
 此处需要 cmake 版本大于 3.4 ，CentOS 7 默认版本为 2.8.12 ，使用 cmake3 
 
@@ -190,7 +190,7 @@ make
 make install
 ```
 
-### 13、编译安装 `snort_extra`
+### 14、编译安装 `snort_extra`
 
 ```
 cd /snort_src
@@ -203,7 +203,7 @@ make
 make install
 ```
 
-### 14、添加环境变量
+### 15、添加环境变量
 
 ```
 sh -c "echo 'export LUA_PATH=/usr/local/include/snort/lua/\?.lua\;\;' >> ~/.bashrc"
@@ -219,7 +219,7 @@ export SNORT_LUA_PATH=/usr/local/etc/snort
 export LD_LIBRARY_PATH=/usr/local/lib
 ```
 
-### 15、测试 snort 
+### 16、测试 snort 
 
 ```
 snort -V
@@ -248,7 +248,7 @@ cp /usr/local/include/snort/lua/snort_config.lua /usr/local/etc/snort/
 snort -c /usr/local/etc/snort/snort.lua -R /usr/local/etc/snort/rules/snort3-community.rules
 ```
 
-### 16、下载安装 `openappid`
+### 17、下载安装 `openappid`
 
 需要注意的是 `openappid/7611` 经测试发现有 bug，目前暂时先用 `openappid/6239`
 
@@ -293,7 +293,7 @@ snort -c /usr/local/etc/snort/snort.lua -R /usr/local/etc/snort/rules/local.rule
 snort -c /usr/local/etc/snort/snort.lua -R /usr/local/etc/snort/rules/local.rules -i ens33 -A alert_fast -k none
 ```
 
-### 17、下载安装官方收费规则
+### 18、下载安装官方收费规则
 
 官方收费规则从网站无法直接下载，需要注册及付费
 
@@ -319,7 +319,7 @@ appid = {
 }
 ```
 
-### 18、报警输出
+### 19、报警输出
 
 修改配置文件 `/usr/local/etc/snort/etc/snort.lua` 以下部分内容，当 `file = true` 时，报警会输出到对应文件，需要保存报警日志时一般开启这个即可，需要定制输出格式时按提示信息修改即可
 
@@ -406,7 +406,7 @@ unified2 = {
 snort -c /usr/local/etc/snort/etc/snort.lua --plugin-path /usr/local/lib/snort_extra -i ens33 -l /var/log/snort -A alert_json -k none
 ```
 
-### 19、参数信息列表
+### 20、参数信息列表
 
 至此，snort 3.0 安装完毕，以下为 snort 3.0 支持的参数信息列表
 
