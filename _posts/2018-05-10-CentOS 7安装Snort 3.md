@@ -8,7 +8,7 @@ permalink: /archivers/CentOS 7安装Snort 3
 
 ### 1、Snort 简介
 
-Snort 是免费 `Network Intrusion Prevention System(NIPS)` 及 `Network Intrusion Detection System (NIDS)` 软件，其具有对数据流量分析和对网络数据包进行协议分析处理的能力，通过灵活可定制的规则库(Rule)，可对处理的报文内容进行搜索和匹配，能够检测出各种攻击，并进行实时预警
+Snort 是免费的 `Network Intrusion Prevention System(NIPS)` 及 `Network Intrusion Detection System (NIDS)` 软件，其具有对数据流量分析和对网络数据包进行协议分析处理的能力，通过灵活可定制的规则库（Rule），可对处理的报文内容进行搜索和匹配，能够检测出各种攻击，并进行实时预警。
 
 Snort 3.0（Snort ++）是 Snort 的更新版本，以下是它一些关键特性：
 
