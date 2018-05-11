@@ -6,6 +6,40 @@ categories: CentOS Snort
 permalink: /archivers/CentOS 7安装Snort 3
 ---
 
+Snort 是免费 Network Intrusion Prevention System(NIPS) 及 Network Intrusion Detection System (NIDS) 软件，其具有对数据流量分析和对网络数据包进行协议分析处理的能力，通过灵活可定制的规则库(Rule)，可对处理的报文内容进行搜索和匹配，能够检测出各种攻击，并进行实时预警
+
+Snort 3.0（Snort ++）是 Snort 的更新版本，以下是它一些关键特性：
+
+* 支持多数据包处理线程
+
+* 使用共享配置文件和属性表
+
+* 使用简单的脚本化的配置文件
+
+* 使关键组件插件化
+
+* 为无端口配置自动检测服务
+
+* 规则中支持粘性缓冲区
+
+* 自动生成参考文档
+
+* 提供更好的跨平台支持
+
+* 便于组件测试
+
+未来包含的其他功能：
+
+* 使用共享的网络地图
+
+* 支持流水线的数据包处理
+
+* 支持硬件卸载和数据平面集成
+
+* 支持代理模式
+
+* 支持 Windows
+
 ### 1、安装 `epel-release`
 
 首先安装 `epel-release`，后续安装 `luajit`、`luajit-devel`、`cmake3` 等软件包时会用到
