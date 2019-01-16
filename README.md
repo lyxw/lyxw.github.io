@@ -1,4 +1,4 @@
-## jekyll-theme-EasyBook
+# jekyll-theme-EasyBook
 
 Another Jekyll Blog Theme "EasyBook"
 
