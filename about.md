@@ -35,10 +35,10 @@ public: true
 
 #### 微信公众号
 
-![](https://lyxw.github.io/images/Sec-redClub.jpg)
+![](https://lyxw.github.io/images/admin/Sec-redClub.jpg)
 
 #### 知识星球
 
-![](https://lyxw.github.io/images/redClub_begin.jpg)
+![](https://lyxw.github.io/images/admin/redClub_begin.jpg)
 
-![](https://lyxw.github.io/images/redClub.jpg)
+![](https://lyxw.github.io/images/admin/redClub.jpg)
