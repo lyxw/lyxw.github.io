@@ -1,9 +1,0 @@
-User-agent: *
-
-Disallow: /css/
-Disallow: /images/
-Disallow: /js/
-
-Feed: https://lyxw.github.io/feed.xml
-
-Sitemap: https://lyxw.github.io/sitemap.xml
