@@ -1,0 +1,360 @@
+---
+layout: post
+title:  "Suricata启用Hyperscan支持以及Prelude-siem安装方法"
+date:   2019-01-23 15:30:20
+categories: suricata IDS Hyperscan Prelude-siem
+permalink: /archivers/Suricata启用Hyperscan支持以及Prelude-siem安装方法
+---
+
+### 安装 Hyperscan
+
+#### Hyperscan 安装要求：
+
+* GCC 版本大于等于4.8.1，使用yum源安装即可
+* CMake 版本大于等于2.8.11，使用yum源安装即可
+* Ragel 版本大于等于6.9，使用yum源安装即可
+* Python 版本为2.7，使用系统默认的
+* Boost 版本大于等于1.57，Boost不需要安装，只需要头文件
+* Pcap 版本大于等于0.8，使用yum源安装即可
+* pcre 版本为8.41，需要自行编译安装
+
+tutututuut
+
+#### 安装编译 pcre 所需的依赖包
+
+```
+yum install -y wget gcc gcc-c++ epel-release
+```
+
+#### 编译安装 pcre
+
+下载 pcre-8.41，选择合适的参数编译安装 pcre，可以与系统中的 pcre 共存。
+
+本次编译选择开启 utf、pcre16、pcre32、unicode、pcre-jit 支持，选用 --libdir=/usr/lib64 --includedir=/usr/include 参数，其他路径可能需要写入 PATH；若选用默认编译安装路径，在编译 hyperscan 时会提示 PCRE not found，生成的 hyperscan 中不包含 PCRE 预处理功能。
+
+PCRE 预处理功能简介：
+
+tututututuut
+
+tutututut
+
+```
+wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz
+tar zxvf pcre-8.41.tar.gz
+cd pcre-8.41
+./configure --enable-utf --enable-jit --enable-pcre16 --enable-pcre32 --enable-unicode-properties --libdir=/usr/lib64 --includedir=/usr/include
+make
+make install
+```
+
+#### 安装编译所 Hyperscan 需要的依赖包
+
+```
+yum install -y cmake libpcap-devel ragel-devel sqlite-devel
+```
+
+#### 下载 Hyperscan 源码，给 hyperscan 文件夹赋予 755 权限即可
+
+```
+wget https://github.com/intel/hyperscan/archive/v5.0.0.tar.gz
+tar zxvf hyperscan-5.0.0.tar.gz
+chmod -R 755 hyperscan-5.0.0
+```
+
+#### 下载 boost-1.66 源码，解压并链接到 /hyperscan/include/ 目录下
+
+```
+wget http://downloads.sourceforge.net/project/boost/boost/1.66.0/boost_1_66_0.tar.gz
+tar zxvf boost_1_66_0.tar.gz
+ln -s /boost_1_66_0/boost /hyperscan/include/boost
+```
+
+#### 创建 Hyperscan 编译目录，同时构建静态库和共享库，类型选 release（无调试符号，详情参考http://intel.github.io/hyperscan/dev-reference/getting_started.html），编译安装 Hyperscan
+
+CMake配置说明：
+
+tututuutututut
+
+构建类型说明：
+
+tutututututut
+
+tutututututtu
+
+```
+mkdir hs_build
+cd hs_build
+cmake ../hyperscan -DBUILD_STATIC_AND_SHARED=on -DCMAKE_BUILD_TYPE=Release
+make
+make install
+```
+
+### 安装 Suricata
+
+复制头文件到 /usr/include/ 下，否则需要修改 PATH；将 hyperscan 动态库的位置写入配置文件，以便于 suricata 编译时能找到 libhs.so 文件
+
+```
+cp /usr/local/include/hs/* /usr/include/
+echo "/usr/local/lib64" > /etc/ld.so.conf.d/libhs.conf
+ldconfig
+```
+
+注意：必须执行 ldconfig，否则会提示找不到文件，造成 suricata 无法正常编译。
+
+#### 安装 suricata 依赖
+
+```
+yum install -y pcre-devel libyaml-devel zlib-devel cargo jansson-devel PyYAML
+yum install -y libcap-ng-devel file-devel lz4-devel
+```
+
+#### 下载 suricata 源码
+
+```
+wget https://www.openinfosecfoundation.org/download/suricata-4.1.0.tar.gz
+tar zxvf suricata-4.1.0.tar.gz
+cd suricata-4.1.0
+```
+
+#### 开启 Prelude 支持
+
+如果要开启 Prelude support ，需要安装 libprelude-devel 和 gnutls-devel 以及注释 configure 文件中第 17936 行附近的内容（参考https://www.prelude-siem.org/projects/prelude/wiki/InstallingAgentThirdpartySuricata），编译安装
+
+tutututututuut
+
+```
+yum install -y libprelude-devel gnutls-devel
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-hyperscan --enable-old-barnyard2 --enable-prelude --enable-pie
+make
+make install
+ldconfig
+```
+
+注意：安装完毕后必须执行 ldconfig，否则会提示缺少 .so 文件，造成程序无法正常运行。
+
+#### 创建配置文件&&安装规则
+
+```
+make install-conf
+make install-rules
+```
+
+tututuututut
+
+#### 测试 suricata 配置文件中加载的官方规则
+
+```
+suricata -T
+```
+
+tutututututuutt
+
+### 安装 Prelude-siem
+
+#### 安装 prelude 包
+
+```
+yum install -y epel-release
+yum install -y prelude-manager-db-plugin prelude-lml prelude-lml-rules prelude-correlator prewikka libpreludedb-mysql prelude-tools preludedb-tools preludedb-mysql
+```
+
+#### 安装 mysql 数据库&初始化数据库
+
+```
+yum install -y mariadb-server
+systemctl enable mariadb
+systemctl start mariadb
+mysql_secure_installation
+```
+
+#### 创建数据库
+
+```
+[root@localhost ~]# mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 17
+Server version: 5.5.60-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE prelude;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> CREATE DATABASE prewikka;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> CREATE USER 'prelude'@'localhost' IDENTIFIED BY 'prelude';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON prelude.* TO 'prelude'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON prewikka.* TO 'prelude'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+```
+
+tututututututu
+
+#### 初始化数据库
+
+```
+[root@localhost ~]# mysql -u prelude -p prelude < /usr/share/libpreludedb/classic/mysql.sql
+Enter password: 
+[root@localhost ~]#
+```
+
+#### 修改配置文件 /etc/prewikka/prewikka.conf
+
+```
+# Events DB
+[idmef_database]
+type: mysql
+host: localhost
+user: prelude
+pass: prelude
+name: prelude
+
+# Prewikka DB
+[database]
+type: mysql
+host: localhost
+user: prelude
+pass: prelude
+name: prewikka
+```
+
+tutuutututtuut
+
+#### 修改配置文件 /etc/prelude-manager/prelude-manager.conf
+
+```
+[db]
+type = mysql
+host = localhost
+name = prelude
+user = prelude
+pass = prelude
+```
+
+tutututututuut
+
+#### 注册 Prelude Manager，启动服务
+
+```
+[root@localhost ~]# prelude-admin add "prelude-manager" --uid 0 --gid 0
+[root@localhost ~]# systemctl start prelude-manager
+[root@localhost ~]# systemctl status prelude-manager
+● prelude-manager.service - Prelude bus communicator
+   Loaded: loaded (/usr/lib/systemd/system/prelude-manager.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2018-12-06 14:16:03 CST; 2s ago
+     Docs: man:prelude-manager(1)
+ Main PID: 7314 (prelude-manager)
+   CGroup: /system.slice/prelude-manager.service
+           └─7314 /usr/sbin/prelude-manager
+
+Dec 06 14:16:03 localhost.localdomain systemd[1]: Started Prelude bus communicator.
+Dec 06 14:16:03 localhost.localdomain systemd[1]: Starting Prelude bus communicator...
+[root@localhost ~]#
+```
+
+tutuututtutuut
+
+#### 注册 Prelude Correlator，启动服务
+
+需要先安装 netaddr，用python3版本
+
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+python3 -m pip install netaddr
+```
+
+#### 注册 Prelude Correlator
+
+* 执行 prelude-admin register "prelude-correlator" "idmef:rw" 127.0.0.1 --uid 0 --gid 0
+* 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
+* 在原窗口输入得到的密码，输入两次
+* 在另一个窗口输入 y
+
+具体流程如下图所示
+
+tututututututut
+
+启动服务
+
+```
+[root@localhost ~]# systemctl start prelude-correlator
+[root@localhost ~]# systemctl status prelude-correlator
+● prelude-correlator.service - Correlator of events received by Prelude
+   Loaded: loaded (/usr/lib/systemd/system/prelude-correlator.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2018-12-06 14:23:17 CST; 2s ago
+ Main PID: 7373 (prelude-correla)
+   CGroup: /system.slice/prelude-correlator.service
+           └─7373 /usr/bin/python3.4 /usr/sbin/prelude-correlator
+
+Dec 06 14:23:17 localhost.localdomain systemd[1]: Started Correlator of events received by Prelude.
+Dec 06 14:23:17 localhost.localdomain systemd[1]: Starting Correlator of events received by Prelude...
+Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.pluginmanager (pid:7373) INFO: [BusinessHourPlugin]: disabled on user request
+Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.pluginmanager (pid:7373) INFO: [FirewallPlugin]: disabled on user request
+Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.plugins.CIArmyPlugin (pid:7373) INFO: Loaded CIArmy data from a previous run (age=0.09 hours)
+Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.plugins.DshieldPlugin (pid:7373) INFO: Downloading DShield report, this might take some time...
+[root@localhost ~]#
+```
+
+#### 注册 Prelude lml，启动服务
+
+* 执行 prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0
+* 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
+* 在原窗口输入得到的密码，输入两次
+* 在另一个窗口输入 y
+
+具体流程如下图所示
+
+tututututututut
+
+启动服务
+
+tutututtutu
+
+#### 开启防火墙 80 端口，启动 web 服务
+
+```
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+prewikka-httpd -p 80
+```
+
+tututututuututu
+
+#### 注册 Suricata
+
+注册方式跟上面一样，注意给 idmef 写权限 prelude-admin register "suricata" "idmef:w" 127.0.0.1 --uid 0 --gid 0
+
+修改配置文件 /etc/suricata/suricata.yaml 第 398 行附近的内容
+
+```
+# alert output to prelude (http://www.prelude-technologies.com/) only
+# available if Suricata has been compiled with --enable-prelude
+- alert-prelude:
+    enabled: yes
+    profile: suricata
+    log-packet-content: yes
+    log-packet-header: yes
+```
+
+tutuutututtutuut
+
+#### 启动 suricata
+
+```
+suricata -c /etc/suricata/suricata.yaml -i `ip a | grep '^2:' | sed 's/^[^:]*: \([^:]*\):.*$/\1/g'`
+```
+
+tutututututuutt
+
+#### 从 web 界面可查看到 suricata
+
+tutututututututut
