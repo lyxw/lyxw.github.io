@@ -18,7 +18,7 @@ permalink: /archivers/Suricata启用Hyperscan支持以及Prelude-siem安装方�
 * Pcap 版本大于等于0.8，使用yum源安装即可
 * pcre 版本为8.41，需要自行编译安装
 
-tutututuut
+![hyperscandependency.png](https://lyxw.github.io/images/suricata/hyperscandependency.png)
 
 #### 安装编译 pcre 所需的依赖包
 
@@ -28,9 +28,7 @@ yum install -y wget gcc gcc-c++ epel-release
 
 #### 编译安装 pcre
 
-下载 pcre-8.41，选择合适的参数编译安装 pcre，可以与系统中的 pcre 共存。
-
-本次编译选择开启 utf、pcre16、pcre32、unicode、pcre-jit 支持，选用 --libdir=/usr/lib64 --includedir=/usr/include 参数，其他路径可能需要写入 PATH；若选用默认编译安装路径，在编译 hyperscan 时会提示 PCRE not found，生成的 hyperscan 中不包含 PCRE 预处理功能。
+下载 pcre-8.41，选择合适的参数编译安装 pcre。本次编译选择开启 `utf、pcre16、pcre32、unicode、pcre-jit` 支持，选用 `--libdir=/usr/lib64 --includedir=/usr/include` 参数，其他路径可能需要写入 PATH；若选用默认编译安装路径，在编译 hyperscan 时会提示 PCRE not found，生成的 hyperscan 中不包含 PCRE 预处理功能。
 
 PCRE 预处理功能简介：
 
@@ -47,13 +45,15 @@ make
 make install
 ```
 
-#### 安装编译所 Hyperscan 需要的依赖包
+#### 安装编译 Hyperscan 所需依赖包
 
 ```
 yum install -y cmake libpcap-devel ragel-devel sqlite-devel
 ```
 
-#### 下载 Hyperscan 源码，给 hyperscan 文件夹赋予 755 权限即可
+#### 下载 Hyperscan 源码
+
+下载 Hyperscan 源码，解压后给 hyperscan 文件夹赋予 755 权限即可
 
 ```
 wget https://github.com/intel/hyperscan/archive/v5.0.0.tar.gz
@@ -61,7 +61,9 @@ tar zxvf hyperscan-5.0.0.tar.gz
 chmod -R 755 hyperscan-5.0.0
 ```
 
-#### 下载 boost-1.66 源码，解压并链接到 /hyperscan/include/ 目录下
+#### 下载 boost-1.66 源码
+
+下载 boost-1.66 源码，解压并链接到 /hyperscan/include/ 目录下
 
 ```
 wget http://downloads.sourceforge.net/project/boost/boost/1.66.0/boost_1_66_0.tar.gz
@@ -69,7 +71,9 @@ tar zxvf boost_1_66_0.tar.gz
 ln -s /boost_1_66_0/boost /hyperscan/include/boost
 ```
 
-#### 创建 Hyperscan 编译目录，同时构建静态库和共享库，类型选 release（无调试符号，详情参考http://intel.github.io/hyperscan/dev-reference/getting_started.html），编译安装 Hyperscan
+#### 编译安装 Hyperscan
+
+创建 Hyperscan 编译目录，同时构建静态库和共享库，类型选 release，编译安装 Hyperscan
 
 CMake配置说明：
 
