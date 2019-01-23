@@ -251,7 +251,9 @@ pass = prelude
 
 ![preludemanagerconf.png](https://lyxw.github.io/images/suricata/preludemanagerconf.png)
 
-#### 7、注册 Prelude Manager，启动服务
+#### 7、注册 Prelude Manager
+
+注册 Prelude Manager 并启动服务
 
 ```
 [root@localhost ~]# prelude-admin add "prelude-manager" --uid 0 --gid 0
@@ -272,9 +274,9 @@ Dec 06 14:16:03 localhost.localdomain systemd[1]: Starting Prelude bus communica
 
 ![preludemanager.png](https://lyxw.github.io/images/suricata/preludemanager.png)
 
-#### 8、注册 Prelude Correlator，启动服务
+#### 8、注册 Prelude Correlator
 
-需要先安装 netaddr，用python3版本
+注册 Prelude Correlator 并启动服务，此处需要先安装 netaddr，使用的是 python3 版本
 
 ```
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -297,7 +299,9 @@ python3 -m pip install netaddr
 
 ![preludeCorrelator.png](https://lyxw.github.io/images/suricata/preludeCorrelator.png)
 
-#### 10、注册 Prelude lml，启动服务
+#### 10、注册 Prelude lml
+
+注册 Prelude lml 并启动服务
 
 * 执行 prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0
 * 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
@@ -312,7 +316,9 @@ python3 -m pip install netaddr
 
 ![preludelml.png](https://lyxw.github.io/images/suricata/preludelml.png)
 
-#### 11、开启防火墙 80 端口，启动 web 服务
+#### 11、其他设置
+
+开启防火墙 80 端口，启动 web 服务
 
 ```
 firewall-cmd --zone=public --add-port=80/tcp --permanent
@@ -348,6 +354,8 @@ suricata -c /etc/suricata/suricata.yaml -i `ip a | grep '^2:' | sed 's/^[^:]*: \
 
 ![suricatarun.png](https://lyxw.github.io/images/suricata/suricatarun.png)
 
-#### 14、从 web 界面可查看到 suricata
+#### 14、prelude admin 界面
+
+从 web 界面可查看到 suricata
 
 ![preludeadmin.png](https://lyxw.github.io/images/suricata/preludeadmin.png)
