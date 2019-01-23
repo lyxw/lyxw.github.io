@@ -118,9 +118,9 @@ cd suricata-4.1.0
 
 #### 开启 Prelude 支持
 
-如果要开启 Prelude support ，需要安装 libprelude-devel 和 gnutls-devel 以及注释 configure 文件中第 17936 行附近的内容（参考https://www.prelude-siem.org/projects/prelude/wiki/InstallingAgentThirdpartySuricata），编译安装
+如果要开启 Prelude support ，需要安装 libprelude-devel 和 gnutls-devel 以及注释 configure 文件中第 17936 行附近的内容，编译安装
 
-tutututututuut
+![preludesupport.png](https://lyxw.github.io/images/suricata/preludesupport.png)
 
 ```
 yum install -y libprelude-devel gnutls-devel
@@ -139,7 +139,7 @@ make install-conf
 make install-rules
 ```
 
-tututuututut
+![installrules.png](https://lyxw.github.io/images/suricata/installrules.png)
 
 #### 测试 suricata 配置文件中加载的官方规则
 
@@ -147,7 +147,7 @@ tututuututut
 suricata -T
 ```
 
-tutututututuutt
+![suricatatest.png](https://lyxw.github.io/images/suricata/suricatatest.png)
 
 ### 安装 Prelude-siem
 
