@@ -10,13 +10,13 @@ permalink: /archivers/Suricata启用Hyperscan支持以及Prelude-siem安装方�
 
 #### 1、Hyperscan 安装要求：
 
-* GCC 版本大于等于4.8.1，使用yum源安装即可
-* CMake 版本大于等于2.8.11，使用yum源安装即可
-* Ragel 版本大于等于6.9，使用yum源安装即可
-* Python 版本为2.7，使用系统默认的
-* Boost 版本大于等于1.57，Boost不需要安装，只需要头文件
-* Pcap 版本大于等于0.8，使用yum源安装即可
-* pcre 版本为8.41，需要自行编译安装
+* GCC 版本大于等于 4.8.1，使用 yum 源安装即可
+* CMake 版本大于等于 2.8.11，使用 yum 源安装即可
+* Ragel 版本大于等于 6.9，使用 yum 源安装即可
+* Python 版本为 2.7，使用系统默认的
+* Boost 版本大于等于 1.57，Boost 不需要安装，只需要头文件
+* Pcap 版本大于等于 0.8，使用 yum 源安装即可
+* pcre 版本为 8.41，需要自行编译安装
 
 ![hyperscandependency.png](https://lyxw.github.io/images/suricata/hyperscandependency.png)
 
@@ -289,7 +289,7 @@ python3 -m pip install netaddr
 * 执行 `prelude-admin register "prelude-correlator" "idmef:rw" 127.0.0.1 --uid 0 --gid 0`
 * 另一个窗口执行 `prelude-admin registration-server prelude-manager`，获取密码
 * 在原窗口输入得到的密码，输入两次
-* 在另一个窗口输入 y
+* 在另一个窗口输入 `y`
 
 具体流程如下图所示
 
@@ -303,10 +303,10 @@ python3 -m pip install netaddr
 
 注册 Prelude lml 并启动服务
 
-* 执行 prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0
-* 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
+* 执行 `prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0`
+* 另一个窗口执行 `prelude-admin registration-server prelude-manager`，获取密码
 * 在原窗口输入得到的密码，输入两次
-* 在另一个窗口输入 y
+* 在另一个窗口输入 `y`
 
 具体流程如下图所示
 
@@ -356,6 +356,6 @@ suricata -c /etc/suricata/suricata.yaml -i `ip a | grep '^2:' | sed 's/^[^:]*: \
 
 #### 14、prelude admin 界面
 
-从 web 界面可查看到 suricata
+从 web 界面可以看到 suricata 已经注册并处于 Online 状态。
 
 ![preludeadmin.png](https://lyxw.github.io/images/suricata/preludeadmin.png)
