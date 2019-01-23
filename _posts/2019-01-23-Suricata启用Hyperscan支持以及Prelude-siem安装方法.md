@@ -32,9 +32,7 @@ yum install -y wget gcc gcc-c++ epel-release
 
 PCRE 预处理功能简介：
 
-tututututuut
-
-tutututut
+![pcrewithhyperscan.png](https://lyxw.github.io/images/suricata/pcrewithhyperscan.png)
 
 ```
 wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz
@@ -77,13 +75,11 @@ ln -s /boost_1_66_0/boost /hyperscan/include/boost
 
 CMake配置说明：
 
-tututuutututut
+![cmake.png](https://lyxw.github.io/images/suricata/cmake.png)
 
 构建类型说明：
 
-tutututututut
-
-tutututututtu
+![buildtype.png](https://lyxw.github.io/images/suricata/buildtype.png)
 
 ```
 mkdir hs_build
