@@ -6,9 +6,9 @@ categories: suricata IDS Hyperscan Prelude-siem
 permalink: /archivers/Suricata启用Hyperscan支持以及Prelude-siem安装方法
 ---
 
-### 安装 Hyperscan
+### 0x01 安装 Hyperscan
 
-#### Hyperscan 安装要求：
+#### 1、Hyperscan 安装要求：
 
 * GCC 版本大于等于4.8.1，使用yum源安装即可
 * CMake 版本大于等于2.8.11，使用yum源安装即可
@@ -20,13 +20,13 @@ permalink: /archivers/Suricata启用Hyperscan支持以及Prelude-siem安装方�
 
 ![hyperscandependency.png](https://lyxw.github.io/images/suricata/hyperscandependency.png)
 
-#### 安装编译 pcre 所需的依赖包
+#### 2、安装编译 pcre 所需的依赖包
 
 ```
 yum install -y wget gcc gcc-c++ epel-release
 ```
 
-#### 编译安装 pcre
+#### 3、编译安装 pcre
 
 下载 pcre-8.41，选择合适的参数编译安装 pcre。本次编译选择开启 `utf、pcre16、pcre32、unicode、pcre-jit` 支持，选用 `--libdir=/usr/lib64 --includedir=/usr/include` 参数，其他路径可能需要写入 PATH；若选用默认编译安装路径，在编译 hyperscan 时会提示 PCRE not found，生成的 hyperscan 中不包含 PCRE 预处理功能。
 
@@ -43,13 +43,13 @@ make
 make install
 ```
 
-#### 安装编译 Hyperscan 所需依赖包
+#### 4、安装编译Hyperscan所需依赖包
 
 ```
 yum install -y cmake libpcap-devel ragel-devel sqlite-devel
 ```
 
-#### 下载 Hyperscan 源码
+#### 5、下载 Hyperscan 源码
 
 下载 Hyperscan 源码，解压后给 hyperscan 文件夹赋予 755 权限即可
 
@@ -59,7 +59,7 @@ tar zxvf hyperscan-5.0.0.tar.gz
 chmod -R 755 hyperscan-5.0.0
 ```
 
-#### 下载 boost-1.66 源码
+#### 6、下载 boost-1.66 源码
 
 下载 boost-1.66 源码，解压并链接到 /hyperscan/include/ 目录下
 
@@ -69,7 +69,7 @@ tar zxvf boost_1_66_0.tar.gz
 ln -s /boost_1_66_0/boost /hyperscan/include/boost
 ```
 
-#### 编译安装 Hyperscan
+#### 7、编译安装 Hyperscan
 
 创建 Hyperscan 编译目录，同时构建静态库和共享库，类型选 release，编译安装 Hyperscan
 
@@ -89,7 +89,9 @@ make
 make install
 ```
 
-### 安装 Suricata
+### 0x02 安装 Suricata
+
+#### 1、安装前配置
 
 复制头文件到 /usr/include/ 下，否则需要修改 PATH；将 hyperscan 动态库的位置写入配置文件，以便于 suricata 编译时能找到 libhs.so 文件
 
@@ -101,14 +103,14 @@ ldconfig
 
 注意：必须执行 ldconfig，否则会提示找不到文件，造成 suricata 无法正常编译。
 
-#### 安装 suricata 依赖
+#### 2、安装 suricata 依赖
 
 ```
 yum install -y pcre-devel libyaml-devel zlib-devel cargo jansson-devel PyYAML
 yum install -y libcap-ng-devel file-devel lz4-devel
 ```
 
-#### 下载 suricata 源码
+#### 3、下载 suricata 源码
 
 ```
 wget https://www.openinfosecfoundation.org/download/suricata-4.1.0.tar.gz
@@ -116,7 +118,7 @@ tar zxvf suricata-4.1.0.tar.gz
 cd suricata-4.1.0
 ```
 
-#### 开启 Prelude 支持
+#### 4、开启 Prelude 支持
 
 如果要开启 Prelude support ，需要安装 libprelude-devel 和 gnutls-devel 以及注释 configure 文件中第 17936 行附近的内容，编译安装
 
@@ -132,7 +134,7 @@ ldconfig
 
 注意：安装完毕后必须执行 ldconfig，否则会提示缺少 .so 文件，造成程序无法正常运行。
 
-#### 创建配置文件&&安装规则
+#### 5、创建配置文件&&安装规则
 
 ```
 make install-conf
@@ -141,7 +143,7 @@ make install-rules
 
 ![installrules.png](https://lyxw.github.io/images/suricata/installrules.png)
 
-#### 测试 suricata 配置文件中加载的官方规则
+#### 6、测试 suricata 配置文件中加载的官方规则
 
 ```
 suricata -T
@@ -149,16 +151,18 @@ suricata -T
 
 ![suricatatest.png](https://lyxw.github.io/images/suricata/suricatatest.png)
 
-### 安装 Prelude-siem
+### 0x03 安装 Prelude-siem
 
-#### 安装 prelude 包
+#### 1、安装 prelude 软件包
 
 ```
 yum install -y epel-release
 yum install -y prelude-manager-db-plugin prelude-lml prelude-lml-rules prelude-correlator prewikka libpreludedb-mysql prelude-tools preludedb-tools preludedb-mysql
 ```
 
-#### 安装 mysql 数据库&初始化数据库
+#### 2、安装 mysql 数据库
+
+安装 mysql 数据库，设置为开机自启动，初始化数据库。
 
 ```
 yum install -y mariadb-server
@@ -167,7 +171,7 @@ systemctl start mariadb
 mysql_secure_installation
 ```
 
-#### 创建数据库
+#### 3、创建数据库
 
 ```
 [root@localhost ~]# mysql -u root -p
@@ -198,7 +202,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 ![mariadb.png](https://lyxw.github.io/images/suricata/mariadb.png)
 
-#### 初始化数据库
+#### 4、导入数据库文件
 
 ```
 [root@localhost ~]# mysql -u prelude -p prelude < /usr/share/libpreludedb/classic/mysql.sql
@@ -206,7 +210,9 @@ Enter password:
 [root@localhost ~]#
 ```
 
-#### 修改配置文件 /etc/prewikka/prewikka.conf
+#### 5、修改 prewikka 配置文件
+
+修改配置文件，路径为 /etc/prewikka/prewikka.conf
 
 ```
 # Events DB
@@ -228,7 +234,9 @@ name: prewikka
 
 ![prewikkaconf.png](https://lyxw.github.io/images/suricata/prewikkaconf.png)
 
-#### 修改配置文件 /etc/prelude-manager/prelude-manager.conf
+#### 修改 prelude-manager 配置文件
+
+修改配置文件，路径为 /etc/prelude-manager/prelude-manager.conf
 
 ```
 [db]
@@ -284,25 +292,6 @@ python3 -m pip install netaddr
 ![Correlatoregister.png](https://lyxw.github.io/images/suricata/Correlatoregister.png)
 
 启动服务
-
-```
-[root@localhost ~]# systemctl start prelude-correlator
-[root@localhost ~]# systemctl status prelude-correlator
-● prelude-correlator.service - Correlator of events received by Prelude
-   Loaded: loaded (/usr/lib/systemd/system/prelude-correlator.service; disabled; vendor preset: disabled)
-   Active: active (running) since Thu 2018-12-06 14:23:17 CST; 2s ago
- Main PID: 7373 (prelude-correla)
-   CGroup: /system.slice/prelude-correlator.service
-           └─7373 /usr/bin/python3.4 /usr/sbin/prelude-correlator
-
-Dec 06 14:23:17 localhost.localdomain systemd[1]: Started Correlator of events received by Prelude.
-Dec 06 14:23:17 localhost.localdomain systemd[1]: Starting Correlator of events received by Prelude...
-Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.pluginmanager (pid:7373) INFO: [BusinessHourPlugin]: disabled on user request
-Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.pluginmanager (pid:7373) INFO: [FirewallPlugin]: disabled on user request
-Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.plugins.CIArmyPlugin (pid:7373) INFO: Loaded CIArmy data from a previous run (age=0.09 hours)
-Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 preludecorrelator.plugins.DshieldPlugin (pid:7373) INFO: Downloading DShield report, this might take some time...
-[root@localhost ~]#
-```
 
 ![preludeCorrelator.png](https://lyxw.github.io/images/suricata/preludeCorrelator.png)
 
