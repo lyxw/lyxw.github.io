@@ -328,6 +328,8 @@ prewikka-httpd -p 80
 
 ![firewall.png](https://lyxw.github.io/images/suricata/firewall.png)
 
+### 0x04 在 prelude-admin 中注册 Suricata
+
 #### 12、注册 Suricata
 
 注册方式跟上面一样，注意给 idmef 写权限 `prelude-admin register "suricata" "idmef:w" 127.0.0.1 --uid 0 --gid 0`
