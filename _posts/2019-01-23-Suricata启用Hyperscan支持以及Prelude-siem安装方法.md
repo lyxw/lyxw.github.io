@@ -43,7 +43,7 @@ make
 make install
 ```
 
-#### 4、安装编译Hyperscan所需依赖包
+#### 4、安装编译 Hyperscan 所需依赖包
 
 ```
 yum install -y cmake libpcap-devel ragel-devel sqlite-devel
@@ -143,7 +143,9 @@ make install-rules
 
 ![installrules.png](https://lyxw.github.io/images/suricata/installrules.png)
 
-#### 6、测试 suricata 配置文件中加载的官方规则
+#### 6、测试 suricata
+
+测试 suricata 默认配置文件中加载的官方规则
 
 ```
 suricata -T
@@ -234,7 +236,7 @@ name: prewikka
 
 ![prewikkaconf.png](https://lyxw.github.io/images/suricata/prewikkaconf.png)
 
-#### 修改 prelude-manager 配置文件
+#### 6、修改 prelude-manager 配置文件
 
 修改配置文件，路径为 /etc/prelude-manager/prelude-manager.conf
 
@@ -249,7 +251,7 @@ pass = prelude
 
 ![preludemanagerconf.png](https://lyxw.github.io/images/suricata/preludemanagerconf.png)
 
-#### 注册 Prelude Manager，启动服务
+#### 7、注册 Prelude Manager，启动服务
 
 ```
 [root@localhost ~]# prelude-admin add "prelude-manager" --uid 0 --gid 0
@@ -270,7 +272,7 @@ Dec 06 14:16:03 localhost.localdomain systemd[1]: Starting Prelude bus communica
 
 ![preludemanager.png](https://lyxw.github.io/images/suricata/preludemanager.png)
 
-#### 注册 Prelude Correlator，启动服务
+#### 8、注册 Prelude Correlator，启动服务
 
 需要先安装 netaddr，用python3版本
 
@@ -280,7 +282,7 @@ python3 get-pip.py
 python3 -m pip install netaddr
 ```
 
-#### 注册 Prelude Correlator
+#### 9、注册 Prelude Correlator
 
 * 执行 prelude-admin register "prelude-correlator" "idmef:rw" 127.0.0.1 --uid 0 --gid 0
 * 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
@@ -295,7 +297,7 @@ python3 -m pip install netaddr
 
 ![preludeCorrelator.png](https://lyxw.github.io/images/suricata/preludeCorrelator.png)
 
-#### 注册 Prelude lml，启动服务
+#### 10、注册 Prelude lml，启动服务
 
 * 执行 prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0
 * 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
@@ -310,7 +312,7 @@ python3 -m pip install netaddr
 
 ![preludelml.png](https://lyxw.github.io/images/suricata/preludelml.png)
 
-#### 开启防火墙 80 端口，启动 web 服务
+#### 11、开启防火墙 80 端口，启动 web 服务
 
 ```
 firewall-cmd --zone=public --add-port=80/tcp --permanent
@@ -320,7 +322,7 @@ prewikka-httpd -p 80
 
 ![firewall.png](https://lyxw.github.io/images/suricata/firewall.png)
 
-#### 注册 Suricata
+#### 12、注册 Suricata
 
 注册方式跟上面一样，注意给 idmef 写权限 prelude-admin register "suricata" "idmef:w" 127.0.0.1 --uid 0 --gid 0
 
@@ -338,7 +340,7 @@ prewikka-httpd -p 80
 
 ![alertprelude.png](https://lyxw.github.io/images/suricata/alertprelude.png)
 
-#### 启动 suricata
+#### 13、启动 suricata
 
 ```
 suricata -c /etc/suricata/suricata.yaml -i `ip a | grep '^2:' | sed 's/^[^:]*: \([^:]*\):.*$/\1/g'`
@@ -346,6 +348,6 @@ suricata -c /etc/suricata/suricata.yaml -i `ip a | grep '^2:' | sed 's/^[^:]*: \
 
 ![suricatarun.png](https://lyxw.github.io/images/suricata/suricatarun.png)
 
-#### 从 web 界面可查看到 suricata
+#### 14、从 web 界面可查看到 suricata
 
 ![preludeadmin.png](https://lyxw.github.io/images/suricata/preludeadmin.png)
