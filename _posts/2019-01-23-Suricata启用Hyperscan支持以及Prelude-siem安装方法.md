@@ -120,7 +120,7 @@ cd suricata-4.1.0
 
 #### 4、开启 Prelude 支持
 
-如果要开启 Prelude support ，需要安装 `libprelude-devel` 和 `gnutls-devel` 以及注释 configure 文件中第 17936 行附近的内容，编译安装
+如果要开启 Prelude support ，需要安装 `libprelude-devel` 和 `gnutls-devel` 以及注释 configure 文件中第 `17936` 行附近的内容，编译安装
 
 ![preludesupport.png](https://lyxw.github.io/images/suricata/preludesupport.png)
 
@@ -334,7 +334,7 @@ prewikka-httpd -p 80
 
 注册方式跟上面一样，注意给 idmef 写权限 `prelude-admin register "suricata" "idmef:w" 127.0.0.1 --uid 0 --gid 0`
 
-修改配置文件 `/etc/suricata/suricata.yaml` 第 398 行附近的内容
+修改配置文件 `/etc/suricata/suricata.yaml` 第 `398` 行附近的内容
 
 ```
 # alert output to prelude (http://www.prelude-technologies.com/) only
