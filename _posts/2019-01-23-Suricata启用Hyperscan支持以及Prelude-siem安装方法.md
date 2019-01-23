@@ -196,7 +196,7 @@ MariaDB [(none)]> GRANT ALL PRIVILEGES ON prewikka.* TO 'prelude'@'localhost';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
-tututututututu
+![mariadb.png](https://lyxw.github.io/images/suricata/mariadb.png)
 
 #### 初始化数据库
 
@@ -226,7 +226,7 @@ pass: prelude
 name: prewikka
 ```
 
-tutuutututtuut
+![prewikkaconf.png](https://lyxw.github.io/images/suricata/prewikkaconf.png)
 
 #### 修改配置文件 /etc/prelude-manager/prelude-manager.conf
 
@@ -239,7 +239,7 @@ user = prelude
 pass = prelude
 ```
 
-tutututututuut
+![preludemanagerconf.png](https://lyxw.github.io/images/suricata/preludemanagerconf.png)
 
 #### 注册 Prelude Manager，启动服务
 
@@ -260,7 +260,7 @@ Dec 06 14:16:03 localhost.localdomain systemd[1]: Starting Prelude bus communica
 [root@localhost ~]#
 ```
 
-tutuututtutuut
+![preludemanager.png](https://lyxw.github.io/images/suricata/preludemanager.png)
 
 #### 注册 Prelude Correlator，启动服务
 
@@ -281,7 +281,7 @@ python3 -m pip install netaddr
 
 具体流程如下图所示
 
-tututututututut
+![Correlatoregister.png](https://lyxw.github.io/images/suricata/Correlatoregister.png)
 
 启动服务
 
@@ -304,6 +304,8 @@ Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 
 [root@localhost ~]#
 ```
 
+![preludeCorrelator.png](https://lyxw.github.io/images/suricata/preludeCorrelator.png)
+
 #### 注册 Prelude lml，启动服务
 
 * 执行 prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0
@@ -313,11 +315,11 @@ Dec 06 14:23:17 localhost.localdomain prelude-correlator[7373]: 06 Dec 14:23:17 
 
 具体流程如下图所示
 
-tututututututut
+![lmlregister.png](https://lyxw.github.io/images/suricata/lmlregister.png)
 
 启动服务
 
-tutututtutu
+![preludelml.png](https://lyxw.github.io/images/suricata/preludelml.png)
 
 #### 开启防火墙 80 端口，启动 web 服务
 
@@ -327,7 +329,7 @@ firewall-cmd --reload
 prewikka-httpd -p 80
 ```
 
-tututututuututu
+![firewall.png](https://lyxw.github.io/images/suricata/firewall.png)
 
 #### 注册 Suricata
 
@@ -345,7 +347,7 @@ tututututuututu
     log-packet-header: yes
 ```
 
-tutuutututtutuut
+![alertprelude.png](https://lyxw.github.io/images/suricata/alertprelude.png)
 
 #### 启动 suricata
 
@@ -353,8 +355,8 @@ tutuutututtutuut
 suricata -c /etc/suricata/suricata.yaml -i `ip a | grep '^2:' | sed 's/^[^:]*: \([^:]*\):.*$/\1/g'`
 ```
 
-tutututututuutt
+![suricatarun.png](https://lyxw.github.io/images/suricata/suricatarun.png)
 
 #### 从 web 界面可查看到 suricata
 
-tutututututututut
+![preludeadmin.png](https://lyxw.github.io/images/suricata/preludeadmin.png)
