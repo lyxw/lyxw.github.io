@@ -51,7 +51,7 @@ yum install -y cmake libpcap-devel ragel-devel sqlite-devel
 
 #### 5、下载 Hyperscan 源码
 
-下载 Hyperscan 源码，解压后给 hyperscan 文件夹赋予 755 权限即可
+下载 Hyperscan 源码，解压后给 hyperscan 文件夹赋予 `755` 权限即可
 
 ```
 wget https://github.com/intel/hyperscan/archive/v5.0.0.tar.gz
@@ -61,7 +61,7 @@ chmod -R 755 hyperscan-5.0.0
 
 #### 6、下载 boost-1.66 源码
 
-下载 boost-1.66 源码，解压并链接到 /hyperscan/include/ 目录下
+下载 boost-1.66 源码，解压并链接到 `/hyperscan/include/` 目录下
 
 ```
 wget http://downloads.sourceforge.net/project/boost/boost/1.66.0/boost_1_66_0.tar.gz
@@ -93,7 +93,7 @@ make install
 
 #### 1、安装前配置
 
-复制头文件到 /usr/include/ 下，否则需要修改 PATH；将 hyperscan 动态库的位置写入配置文件，以便于 suricata 编译时能找到 libhs.so 文件
+复制头文件到 `/usr/include/` 下，否则需要修改 PATH；将 hyperscan 动态库的位置写入配置文件，以便于 suricata 编译时能找到 libhs.so 文件
 
 ```
 cp /usr/local/include/hs/* /usr/include/
@@ -101,7 +101,7 @@ echo "/usr/local/lib64" > /etc/ld.so.conf.d/libhs.conf
 ldconfig
 ```
 
-注意：必须执行 ldconfig，否则会提示找不到文件，造成 suricata 无法正常编译。
+注意：必须执行 `ldconfig`，否则会提示找不到文件，造成 suricata 无法正常编译。
 
 #### 2、安装 suricata 依赖
 
@@ -120,7 +120,7 @@ cd suricata-4.1.0
 
 #### 4、开启 Prelude 支持
 
-如果要开启 Prelude support ，需要安装 libprelude-devel 和 gnutls-devel 以及注释 configure 文件中第 17936 行附近的内容，编译安装
+如果要开启 Prelude support ，需要安装 `libprelude-devel` 和 `gnutls-devel` 以及注释 configure 文件中第 17936 行附近的内容，编译安装
 
 ![preludesupport.png](https://lyxw.github.io/images/suricata/preludesupport.png)
 
@@ -132,7 +132,7 @@ make install
 ldconfig
 ```
 
-注意：安装完毕后必须执行 ldconfig，否则会提示缺少 .so 文件，造成程序无法正常运行。
+注意：安装完毕后必须执行 `ldconfig`，否则会提示缺少 .so 文件，造成程序无法正常运行。
 
 #### 5、创建配置文件&&安装规则
 
@@ -214,7 +214,7 @@ Enter password:
 
 #### 5、修改 prewikka 配置文件
 
-修改配置文件，路径为 /etc/prewikka/prewikka.conf
+修改配置文件，路径为 `/etc/prewikka/prewikka.conf`
 
 ```
 # Events DB
@@ -238,7 +238,7 @@ name: prewikka
 
 #### 6、修改 prelude-manager 配置文件
 
-修改配置文件，路径为 /etc/prelude-manager/prelude-manager.conf
+修改配置文件，路径为 `/etc/prelude-manager/prelude-manager.conf`
 
 ```
 [db]
@@ -276,7 +276,7 @@ Dec 06 14:16:03 localhost.localdomain systemd[1]: Starting Prelude bus communica
 
 #### 8、注册 Prelude Correlator
 
-注册 Prelude Correlator 并启动服务，此处需要先安装 netaddr，使用的是 python3 版本
+注册 Prelude Correlator 并启动服务，此处需要先安装 `netaddr`，使用的是 python3 版本
 
 ```
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -286,8 +286,8 @@ python3 -m pip install netaddr
 
 #### 9、注册 Prelude Correlator
 
-* 执行 prelude-admin register "prelude-correlator" "idmef:rw" 127.0.0.1 --uid 0 --gid 0
-* 另一个窗口执行 prelude-admin registration-server prelude-manager，获取密码
+* 执行 `prelude-admin register "prelude-correlator" "idmef:rw" 127.0.0.1 --uid 0 --gid 0`
+* 另一个窗口执行 `prelude-admin registration-server prelude-manager`，获取密码
 * 在原窗口输入得到的密码，输入两次
 * 在另一个窗口输入 y
 
@@ -330,9 +330,9 @@ prewikka-httpd -p 80
 
 #### 12、注册 Suricata
 
-注册方式跟上面一样，注意给 idmef 写权限 prelude-admin register "suricata" "idmef:w" 127.0.0.1 --uid 0 --gid 0
+注册方式跟上面一样，注意给 idmef 写权限 `prelude-admin register "suricata" "idmef:w" 127.0.0.1 --uid 0 --gid 0`
 
-修改配置文件 /etc/suricata/suricata.yaml 第 398 行附近的内容
+修改配置文件 `/etc/suricata/suricata.yaml` 第 398 行附近的内容
 
 ```
 # alert output to prelude (http://www.prelude-technologies.com/) only
