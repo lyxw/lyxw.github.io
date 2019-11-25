@@ -39,11 +39,11 @@ public: true
 
 #### 网站
 
-* [http://sec-redclub.com/](http://www.sec-redclub.com/) 
+* [http://sec-redclub.com](http://www.sec-redclub.com/) 
 
-* [http://qiyuanxuetang.net/](http://qiyuanxuetang.net/) 
+* [http://qiyuanxuetang.net](http://qiyuanxuetang.net/) 
 
-* [https://redbu1l.github.io/](https://redbu1l.github.io/)
+* [https://redbu1l.github.io](https://redbu1l.github.io/)
 
 #### 论坛
 
