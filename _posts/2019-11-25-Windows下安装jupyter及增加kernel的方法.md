@@ -14,17 +14,19 @@ Jupyter Notebook是一个开源的Web应用程序，允许创建和共享包含�
 
 ### 0x02 安装jupyter
 
-#### 1、首先需要安装python，建议选用最新的python3版本
+#### 1、首先需要安装python，建议选用最新的python3版本，安装完毕后设置好环境变量
 
-下载地址： [https://www.python.org/downloads](https://www.python.org/downloads/)
+下载地址： [https://www.python.org/downloads/windows](https://www.python.org/downloads/windows/)
 
-#### 2、安装完毕后设置好环境变量，然后安装jupyter
+![python_version.jpg](https://lyxw.github.io/images/jupyter/python_version.jpg)
+
+#### 2、然后安装jupyter，安装过程可能会比较慢，等待执行完毕
 
 ```
 pip3 install jupyter
 ```
 
-安装过程可能会比较慢，等待执行完毕
+![pip_install_jupyter.jpg](https://lyxw.github.io/images/jupyter/pip_install_jupyter.jpg)
 
 ### 0x03 使用jupyter
 
@@ -33,6 +35,10 @@ pip3 install jupyter
 ```
 jupyter-notebook
 ```
+
+![jupyter_run.jpg](https://lyxw.github.io/images/jupyter/jupyter_run.jpg)
+
+![jupyter_browser.jpg](https://lyxw.github.io/images/jupyter/jupyter_browser.jpg)
 
 #### 2、点击右上角，新建一个Python3项目
 
