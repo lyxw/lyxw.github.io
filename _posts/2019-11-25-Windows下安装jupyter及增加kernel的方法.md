@@ -10,6 +10,8 @@ permalink: /archivers/Windows下安装jupyter及增加kernel的方法
 
 Jupyter Notebook是一个开源的Web应用程序，允许创建和共享包含实时代码、方程式、可视化效果和叙述文本的文档，可以理解为加强版的网页交互式编译器。
 
+![jupyterpreview.png](https://lyxw.github.io/images/jupyter/jupyterpreview.png)
+
 ### 0x02 安装jupyter
 
 #### 1、首先需要安装python，建议选用最新的python3版本
@@ -34,21 +36,21 @@ jupyter-notebook
 
 #### 2、点击右上角，新建一个Python3项目
 
-
+![jupyter_python3.jpg](https://lyxw.github.io/images/jupyter/jupyter_python3.jpg)
 
 #### 3、新项目如下，其中每一行表示一个cell，代码在里边编写
 
-
+![jupyter_cell.jpg](https://lyxw.github.io/images/jupyter/jupyter_cell.jpg)
 
 #### 4、常用快捷键
 
-- **Enter**: 本单元换行
+- **Enter** : 本单元换行
 
-- **Shift + Enter**: 运行本单元，选中下个单元
+- **Shift + Enter** : 运行本单元，选中下个单元
 
-- **Ctrl + Enter**: 运行本单元
+- **Ctrl + Enter** : 运行本单元
 
-- **Alt + Enter**: 运行本单元，在其下插入新单元
+- **Alt + Enter** : 运行本单元，在其下插入新单元
 
 ### 0x04 安装java内核
 
@@ -57,6 +59,7 @@ jupyter-notebook
 下载地址： [https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 
 #### 2、安装完毕后需配置好环境变量
+
 
 
 #### 3、下载IJava
@@ -72,6 +75,7 @@ python3 install.py --sys-prefix
 #### 5、安装完毕
 
 
+
 ### 0x05 安装php内核
 
 #### 1、需要php版本大于7.0，可使用7.2
@@ -79,6 +83,7 @@ python3 install.py --sys-prefix
 下载地址： [https://windows.php.net/downloads/releases/php-7.2.25-Win32-VC15-x64.zip](https://windows.php.net/downloads/releases/php-7.2.25-Win32-VC15-x64.zip)
 
 #### 2、安装完毕后需配置好环境变量
+
 
 
 #### 3、安装composer，需要php启用openssl扩展
