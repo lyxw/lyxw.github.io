@@ -42,13 +42,13 @@ jupyter-notebook
 
 #### 4、常用快捷键
 
-* Enter: 本单元换行
+- **Enter**: 本单元换行
 
-* Shift+Enter: 运行本单元，选中下个单元
+- **Shift + Enter**: 运行本单元，选中下个单元
 
-* Ctrl+Enter: 运行本单元
+- **Ctrl + Enter**: 运行本单元
 
-* Alt+Enter: 运行本单元，在其下插入新单元
+- **Alt + Enter**: 运行本单元，在其下插入新单元
 
 ### 0x04 安装java内核
 
