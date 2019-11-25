@@ -18,6 +18,8 @@ Jupyter Notebook是一个开源的Web应用程序，允许创建和共享包含�
 
 下载地址： [https://www.python.org/downloads/windows](https://www.python.org/downloads/windows/)
 
+![python_path.jpg](https://lyxw.github.io/images/jupyter/python_path.jpg)
+
 ![python_version.jpg](https://lyxw.github.io/images/jupyter/python_version.jpg)
 
 #### 2、然后安装jupyter，安装过程可能会比较慢，等待执行完毕
@@ -66,7 +68,9 @@ jupyter-notebook
 
 #### 2、安装完毕后需配置好环境变量
 
+![java_home.jpg](https://lyxw.github.io/images/jupyter/java_home.jpg)
 
+![java_path.jpg](https://lyxw.github.io/images/jupyter/java_path.jpg)
 
 #### 3、下载IJava
 
@@ -80,7 +84,7 @@ python3 install.py --sys-prefix
 
 #### 5、安装完毕
 
-
+![jupyter_java.jpg](https://lyxw.github.io/images/jupyter/jupyter_java.jpg)
 
 ### 0x05 安装php内核
 
@@ -90,15 +94,21 @@ python3 install.py --sys-prefix
 
 #### 2、安装完毕后需配置好环境变量
 
+![php_path.jpg](https://lyxw.github.io/images/jupyter/php_path.jpg)
 
-
-#### 3、安装composer，需要php启用openssl扩展
+#### 3、安装composer，按要求一步步安装即可，需要php启用openssl扩展
 
 下载地址： [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
 
-#### 4、下载PHP-ZMQ扩展，解压到相应的位置，并在配置文件`php.ini`中添加
+#### 4、下载PHP-ZMQ扩展并解压
 
 下载地址： [https://windows.php.net/downloads/pecl/releases/zmq/1.1.3/php_zmq-1.1.3-7.2-ts-vc15-x64.zip](https://windows.php.net/downloads/pecl/releases/zmq/1.1.3/php_zmq-1.1.3-7.2-ts-vc15-x64.zip)
+
+- **libzmq.dll**与**libzmq.pdb**放置在`php.exe`所在目录
+
+- **php_zmq.dll**与**php_zmq.pdb**放置在php安装目录中的`ext`目录内，并在配置文件`php.ini`中添加
+
+![php_ini.jpg](https://lyxw.github.io/images/jupyter/php_ini.jpg)
 
 #### 5、下载PHAR安装程序
 
@@ -112,3 +122,4 @@ php jupyter-php-installer.phar install -vvv
 
 #### 7、安装完毕
 
+![jupyter_php.jpg](https://lyxw.github.io/images/jupyter/jupyter_php.jpg)
