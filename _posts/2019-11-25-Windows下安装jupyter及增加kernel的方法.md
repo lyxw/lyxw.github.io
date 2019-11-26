@@ -10,7 +10,7 @@ permalink: /archivers/Windows下安装jupyter及增加kernel的方法
 
 Jupyter Notebook是一个开源的Web应用程序，允许创建和共享包含实时代码、方程式、可视化效果和叙述文本的文档，可以理解为加强版的网页交互式编译器。
 
-![jupyterpreview.png](https://lyxw.github.io/images/jupyter/jupyterpreview.png)
+![jupyterpreview.jpg](https://lyxw.github.io/images/jupyter/jupyterpreview.jpg)
 
 ### 0x02 安装jupyter
 
@@ -100,6 +100,8 @@ python3 install.py --sys-prefix
 
 下载地址： [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
 
+![composer_install.jpg](https://lyxw.github.io/images/jupyter/composer_install.jpg)
+
 #### 4、下载PHP-ZMQ扩展并解压
 
 下载地址： [https://windows.php.net/downloads/pecl/releases/zmq/1.1.3/php_zmq-1.1.3-7.2-ts-vc15-x64.zip](https://windows.php.net/downloads/pecl/releases/zmq/1.1.3/php_zmq-1.1.3-7.2-ts-vc15-x64.zip)
@@ -119,6 +121,8 @@ python3 install.py --sys-prefix
 ```
 php jupyter-php-installer.phar install -vvv
 ```
+
+![php_kernel.jpg](https://lyxw.github.io/images/jupyter/php_kernel.jpg)
 
 #### 7、安装完毕
 
