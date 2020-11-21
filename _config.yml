@@ -13,7 +13,10 @@ avatar: "/images/author.jpg"
 profile: The quiter you become, the more you can hear.
 #twitter_username: kylin
 github_username: lyxw
+gitee_username: allmost
 wxgzh_username: about
+
+include: [_layouts, _includes, _posts, _sass]
 
 # Comment Service
 idcomments_acct: f0a7bf6974944a38926567763cc03594
