@@ -13,7 +13,8 @@
 			<a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
 		{% endif %}
 		{% if site.wxgzh_username %}
-			<a href="https://lyxw.github.io/{{ site.wxgzh_username }}">公众号</a>
+			<!--<a href="https://lyxw.github.io/{{ site.wxgzh_username }}">公众号</a>-->
+			<a href="{{ site.wxgzh_username | prepend: site.baseurl | prepend: site.url }}">公众号</a>
 		{% endif %}
 		{% if site.email %}
 			<a href="mailto:{{ site.email }}">Email</a>
